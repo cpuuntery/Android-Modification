@@ -1,0 +1,23 @@
+inactive_to (and motion_inactive_to) must be smalllllll very small 
+light_after_inactive_to   must be smalllllll very small 
+
+2592000000 is a good number
+18000000 is 5 hours
+25200000 is 7
+1000  is 1secound and it is a good bear minmal
+
+
+adb shell settings put global device_idle_constants light_after_inactive_to=100,light_pre_idle_to=6,light_idle_to=18000000,light_idle_factor=5.0,light_max_idle_to=25200000,light_idle_maintenance_min_budget=6,light_idle_maintenance_max_budget=3,min_light_maintenance_time=5,min_deep_maintenance_time=3,inactive_to=100,sensing_to=24,locating_to=30000,location_accuracy=20.0,motion_inactive_to=60,idle_after_inactive_to=18,idle_pending_to=3,max_idle_pending_to=6,idle_pending_factor=1.0,idle_to=25200000,max_idle_to=2592000000,idle_factor=5,min_time_to_alarm=3,max_temp_app_whitelist_duration=30,mms_temp_app_whitelist_duration=6,sms_temp_app_whitelist_duration=2,notification_whitelist_duration=2
+
+
+adb shell settings put global low_power_trigger_level 100
+
+
+adb shell settings put global device_idle_constants light_after_inactive_to=100,light_pre_idle_to=6,light_idle_to=18000000,light_idle_factor=5.0,light_max_idle_to=25200000,light_idle_maintenance_min_budget=6,light_idle_maintenance_max_budget=3,min_light_maintenance_time=5,min_deep_maintenance_time=3,inactive_to=100,sensing_to=24,locating_to=30000,location_accuracy=20.0,motion_inactive_to=60,idle_after_inactive_to=18,idle_pending_to=3,max_idle_pending_to=6,idle_pending_factor=1.0,idle_to=25200000,max_idle_to=2592000000,idle_factor=5,min_time_to_alarm=3,max_temp_app_whitelist_duration=30,mms_temp_app_whitelist_duration=6,sms_temp_app_whitelist_duration=2,notification_whitelist_duration=2,wait_for_unlock=true
+
+
+
+the best
+
+
+adb shell settings put global device_idle_constants light_after_inactive_to=1,light_pre_idle_to=1,light_idle_to=18000000,light_idle_factor=5.0,light_max_idle_to=25200000,light_idle_maintenance_min_budget=1,light_idle_maintenance_max_budget=1,min_light_maintenance_time=1,min_deep_maintenance_time=1,inactive_to=1,sensing_to=1,locating_to=1,location_accuracy=1000000000.0,motion_inactive_to=1,idle_after_inactive_to=1,idle_pending_to=1,max_idle_pending_to=1,idle_pending_factor=1.0,idle_to=82800000,max_idle_to=2592000000,idle_factor=5,min_time_to_alarm=1,max_temp_app_whitelist_duration=1,mms_temp_app_whitelist_duration=1,sms_temp_app_whitelist_duration=1,notification_whitelist_duration=1,wait_for_unlock=true
