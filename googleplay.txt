@@ -1,0 +1,25 @@
+disabledComponents:
+        com.google.android.finsky.instantapps.InstantAppHygieneService
+        com.google.android.finsky.wear.WearChangeListenerService
+        com.google.android.finsky.instantapps.PhenotypeUpdateService
+        com.google.android.finsky.instantapps.InstantAppsSharedPreferencesService
+        com.google.android.finsky.scheduler.process.mainimpl.PhoneskyJobServiceMain
+        com.google.android.finsky.wear.WearSupportService
+        com.google.android.finsky.instantapps.metrics.LogFlushJob
+        com.google.android.finsky.wearsupport.WearSupportService
+        com.google.android.finsky.systemupdateactivity.SystemUpdateActivity
+        com.google.android.finsky.instantapps.statussync.EnabledStatusSyncService
+        com.google.android.finsky.enterprisedevicereport.AppStatesService
+        com.google.android.finsky.instantapps.InstantAppsLoggingService
+        com.google.android.finsky.boothandler.BootCompletedReceiver
+        com.google.android.finsky.ipcservers.instantapps.InstantAppsGrpcServerAndroidService
+        com.google.android.finsky.systemupdateactivity.SettingsSecurityEntryPoint
+        com.google.android.finsky.instantappsbackendclient.impl.UpdateContentFilterJob
+        com.google.android.finsky.instantapps.launchservice.InstantAppsLaunchService
+        com.google.android.finsky.activities.DebugActivity
+        com.google.android.finsky.instantapps.dna.ArchiveDownloadBroadcastReceiver
+        com.google.android.finsky.wearsupport.WearChangeListenerService
+        com.google.android.finsky.instantapps.hint.AppPreloadHygieneService
+        com.google.android.finsky.instantapps.appmanagement.AppManagementService
+        com.google.android.finsky.instantapps.dna.ArchivePrefetchService
+        com.google.android.finsky.scheduler.process.mainimpl.AlarmManagerServiceMain
