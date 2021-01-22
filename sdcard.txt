@@ -1,0 +1,5 @@
+su -mm -c mount -t ext4 -o nosuid,nodev,noexec,noatime /dev/block/mmcblk1p1 /data/media/0/sdcard
+restorecon -rv /data/media/0/sdcard
+chown -R media_rw:media_rw /data/media/0/sdcard
+chmod -R 775 /data/media/0/sdcard
+su -mm -c mount -t sdcardfs -o nosuid,nodev,noexec,noatime,mask=7,gid=9997 /data/media/0/sdcard /mnt/runtime/write/emulated/0/sdcard
