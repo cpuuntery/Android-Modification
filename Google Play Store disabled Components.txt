@@ -1,0 +1,10 @@
+com.google.android.finsky.permissionrevocation.UnusedAppRestrictionsBackportService
+com.google.android.finsky.wearsupport.WearSupportService
+com.google.android.finsky.systemupdateactivity.SystemUpdateActivity
+com.google.android.finsky.systemupdateactivity.SettingsSecurityEntryPoint
+com.google.android.finsky.activities.DebugActivity
+com.google.android.finsky.instantapps.dna.ArchiveDownloadBroadcastReceiver
+com.google.android.finsky.protect.PermissionAutoRevocationSettingsPage
+com.google.android.finsky.permissionrevocation.UnusedAppRestrictionsPublicService
+com.google.android.finsky.wearsupport.WearChangeListenerService
+com.google.android.finsky.systemcomponentupdate.SystemComponentUpdateActivity
