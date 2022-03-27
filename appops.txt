@@ -1,0 +1,10 @@
+This command allows you to list apps that has the appops READ_CLIPBOARD set to [allow]
+and you can set the command to list the apps that are denied by changing allow to [ignore]
+and I guess by not specifying allow or ignore it will list all apps that use the appops
+
+
+adb shell cmd appops query-op --user 0 READ_CLIPBOARD allow
+
+To set the appops for an app
+
+adb shell cmd appops set <packagename> <appops> ignore or allow
