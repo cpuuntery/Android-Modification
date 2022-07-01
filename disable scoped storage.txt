@@ -1,1 +1,2 @@
-adb shell sm set-isolated-storage off
+adb shell cmd appops set <package_name> NO_ISOLATED_STORAGE allow
+adb shell cmd appops set your-package-name android:no_isolated_storage allow
