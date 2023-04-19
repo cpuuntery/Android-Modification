@@ -1,0 +1,41 @@
+------ [a-zA-Z]+
+
+--------- beginning of system
+------ EVENT LOG
+------ PROCESS TIMES
+------ LOG STATISTICS 
+
+Starting after the boot
+App/process starting timestamp
+
+.*ActivityManager.*Start proc.* 
+
+.*ActivityManager.*boot.* 
+
+.*ActivityManager.*broadcast.*
+
+
+.*am_proc_start.*boot.*
+
+.*am_proc_start.*broadcast.*
+
+boot_progress
+
+Interesting stuff
+
+dumpsys activity providers
+Process LRU list
+PID mappings:
+Chattiest
+curRaw=
+CchEmty
+
+Extract a list of every app installed on the device
+
+(?<=Package \[).*?(?=\] )
+
+  
+
+Package idle stats: very good maybe every single app. that ran at one point of time on the device
+(?<=    package=).*?(?= lastUsedElapsed)
+

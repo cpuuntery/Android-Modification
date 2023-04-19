@@ -1,0 +1,27 @@
+replacing 
+<category android:name="android.intent.category.LAUNCHER"/>
+with 
+<category android:name="android.intent.category.DEFAULT"/>
+
+
+
+or replace 
+<category android:name="android.intent.category.LAUNCHER"/>
+with
+<category android:name="android.intent.category.LEANBACK_LAUNCHER"/>
+
+or changing
+<category android:name="android.intent.category.LAUNCHER"/>
+
+with 
+
+<category android:name="android.intent.category.LEANBACK_LAUNCHER"/>
+and add 
+
+uses-feature place in near uses-permission
+<uses-feature android:name="android.software.leanback" android:required="true" />
+
+or use 
+
+adb shell settings put global show_hidden_icon_apps_enabled 0
+

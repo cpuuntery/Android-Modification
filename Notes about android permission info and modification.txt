@@ -1,0 +1,38 @@
+Print a list of packages names based on permission usage
+
+pm list packages | sed 's/package://g' | while read line; do [[ `dumpsys package $line | grep 'android.permission.INTERNET'` ]] && echo "$line"; done
+
+remove permission from a specific package
+
+sed -i -E '/.*io.github.forkmaintainers.iceraven.*/,/.*android.permission.INTERNET.*/ s/.*android.permission.INTERNET.*/\n/' /data/system/packages.xml
+
+
+
+add a permission to a specific package
+
+sed -i -E '/.*io.github.forkmaintainers.iceraven.*/,/.*<perms>.*/ s/<perms>/<perms>\n            <item name="android.permission.INTERNET" granted="true" flags="0" \/>/' /data/system/packages.xml
+
+remove runtime-permission from a specific package
+
+sed -i -E '/.*io.github.forkmaintainers.iceraven.*/,/.*android.permission.INTERNET.*/ s/.*android.permission.INTERNET.*/\n/' /data/system/users/0/runtime-permissions.xml
+
+add runtime-permission from a specific package
+
+sed -i -E '/.*io.github.forkmaintainers.iceraven/,/<\/pkg>/ s/">/">\n    <item name="android.permission.INTERNET" granted="true" flags="0" \/>/' /data/system/users/0/runtime-permissions.xml
+
+change permission from true to flags in runtime-permission
+sed -i -E '/.*io.github.forkmaintainers.iceraven.*/,/.*android.permission.INTERNET" granted=/ s/true/false/' /data/system/users/0/runtime-permissions.xml
+Remove permission from every package that request it. 
+If the package gets updated, it will proclaim the permission.
+pm list packages -3 | sed 's/package://g' | while read line; do [[ `dumpsys package $line | grep 'android.permission.RECEIVE_BOOT_COMPLETED'` ]] && sed -i -E '/.*'"$line"'.*/,/.*android.permission.RECEIVE_BOOT_COMPLETED.*/ s/.*android.permission.RECEIVE_BOOT_COMPLETED.*/\n/' /data/system/packages.xml && echo "$line"; done
+p.s thanks to https://stackoverflow.com/a/8655722 the above command is working
+
+Prevent file from being overwritten in android 
+note in the file is related to system_server is may cause the process to crash repeatedly, rendering the phone unusable
+to lock the file
+chattr +i /data/system/packages.xml
+to unlock the file
+chattr -i /data/system/packages.xml
+
+interesting permission to add
+android.permission.READ_CLIPBOARD_IN_BACKGROUND

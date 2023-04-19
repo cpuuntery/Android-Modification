@@ -1,0 +1,8 @@
+you can only use these command inside the shell
+the original
+pm list packages | tr -d '\r'| sed 's/package://g' | while read line; do [[ `dumpsys package $line | grep 'android.permission.CAMERA'` ]] && echo "$line"; done
+
+the slightly improved version
+pm list packages | sed 's/package://g' | while read line; do [[ `dumpsys package $line | grep 'android.permission.RECEIVE_BOOT_COMPLETED'` ]] && echo "$line"; done
+pm list packages | sed 's/package://g' | while read line; do [[ `dumpsys package $line | grep 'android.permission.INTERNET'` ]] && echo "$line"; done
+

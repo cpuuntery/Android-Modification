@@ -1,0 +1,38 @@
+instruction about changing app name and icon
+
+There are two types of app names.
+the first type is the one that shows up in the launcher
+the second is the one that shows up in the settings when listing installed apps
+
+Change the app name in the launcher
+android:label="The name that shows up in the launcher"
+
+You can use programs like 
+to help you change the second type of app name
+
+https://github.com/kefir500/apk-editor-studio
+https://github.com/kefir500/apk-icon-editor
+
+just like there are two types of app name there are two types of icon 
+
+The first type in the icon in the launcher icon, usually it has the word launcher in its name
+to change the icon just rename your icon to the same name and copy and replace. note there are multable copies of icons or each resolution
+ranging from 48 to 192 pixels 
+here are the commands that help you find the files.
+
+find . -type f -iname "*.*"  -exec file {} \; | sed -E 's/(.*): [A-Z].*, ([0-9].*x.*[0-9]+),.*/\2 \1/' | awk 'int($1) == 48 {print}' | awk -F 'x' 'int($2) == 48 {print}'
+find . -type f -iname "*.*"  -exec file {} \; | sed -E 's/(.*): [A-Z].*, ([0-9].*x.*[0-9]+),.*/\2 \1/' | awk 'int($1) == 72 {print}' | awk -F 'x' 'int($2) == 72 {print}'
+find . -type f -iname "*.*"  -exec file {} \; | sed -E 's/(.*): [A-Z].*, ([0-9].*x.*[0-9]+),.*/\2 \1/' | awk 'int($1) == 96 {print}' | awk -F 'x' 'int($2) == 96 {print}'
+find . -type f -iname "*.*"  -exec file {} \; | sed -E 's/(.*): [A-Z].*, ([0-9].*x.*[0-9]+),.*/\2 \1/' | awk 'int($1) == 144 {print}' | awk -F 'x' 'int($2) == 144 {print}'
+find . -type f -iname "*.*"  -exec file {} \; | sed -E 's/(.*): [A-Z].*, ([0-9].*x.*[0-9]+),.*/\2 \1/' | awk 'int($1) == 192 {print}' | awk -F 'x' 'int($2) == 192 {print}'
+
+For the second type, you can use the same programs that helped change the app name
+
+https://github.com/kefir500/apk-editor-studio
+https://github.com/kefir500/apk-icon-editor
+
+P.S apk-editor-studio has an option to use user defined certificates
+
+the icons will be uploaded to
+https://gitlab.com/2yearimprovment/android-icones
+
