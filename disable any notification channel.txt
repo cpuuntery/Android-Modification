@@ -1,0 +1,8 @@
+Edit /data/system/notification_policy.xml
+the path may change in newer version of android
+importance="3" to  importance="0"
+and added locked="4"
+
+<channel id="brand_new_push_channel" name="New Series Releases" desc="Receive notifications when new series is released" importance="0" sound="content://settings/system/notification_sound" usage="5" content_type="4" flags="0" locked="4" show_badge="true" />
+---
+<channel id="brand_new_push_channel" name="New Series Releases" desc="Receive notifications when new series is released" importance="3" sound="content://settings/system/notification_sound" usage="5" content_type="4" flags="0" show_badge="true" />
