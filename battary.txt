@@ -21,3 +21,9 @@ the best
 
 
 adb shell settings put global device_idle_constants light_after_inactive_to=1,light_pre_idle_to=1,light_idle_to=18000000,light_idle_factor=5.0,light_max_idle_to=25200000,light_idle_maintenance_min_budget=1,light_idle_maintenance_max_budget=1,min_light_maintenance_time=1,min_deep_maintenance_time=1,inactive_to=1,sensing_to=1,locating_to=1,location_accuracy=1000000000.0,motion_inactive_to=1,idle_after_inactive_to=1,idle_pending_to=1,max_idle_pending_to=1,idle_pending_factor=1.0,idle_to=82800000,max_idle_to=2592000000,idle_factor=5,min_time_to_alarm=1,max_temp_app_whitelist_duration=1,mms_temp_app_whitelist_duration=1,sms_temp_app_whitelist_duration=1,notification_whitelist_duration=1,wait_for_unlock=true
+
+
+
+may be the best 
+
+adb shell settings put global device_idle_constants light_after_inactive_to=1,light_pre_idle_to=1,light_idle_to=1,light_idle_factor=1.0,light_max_idle_to=1,light_idle_maintenance_min_budget=1,light_idle_maintenance_max_budget=1,min_light_maintenance_time=1,min_deep_maintenance_time=1,inactive_to=1,sensing_to=1,locating_to=1,location_accuracy=1000000000.0,motion_inactive_to=1,idle_after_inactive_to=1,idle_pending_to=1,max_idle_pending_to=1,idle_pending_factor=1.0,idle_to=82800000,max_idle_to=2592000000,idle_factor=9,min_time_to_alarm=1,max_temp_app_whitelist_duration=1,mms_temp_app_whitelist_duration=1,sms_temp_app_whitelist_duration=1,notification_whitelist_duration=1,wait_for_unlock=true

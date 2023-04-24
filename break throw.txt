@@ -1,5 +1,6 @@
 adb shell settings put global alarm_manager_constants standby_working_delay=300000,standby_frequent_delay=600000,standby_rare_delay=900000,standby_never_delay=3600000,allow_while_idle_short_time=1,allow_while_idle_long_time=1,allow_while_idle_whitelist_duration=1
 
+pm disable --user 0 com.google.android.gms/com.google.android.gms.update.SystemUpdateActivity
 
 
 adb shell settings put global forced_app_standby_for_small_battery_enabled 1
@@ -7,7 +8,7 @@ adb shell settings put global forced_app_standby_for_small_battery_enabled 1
 
 adb shell settings put global app_standby_enabled 1
 
-adb shell settings put global low_power_trigger_level 100
+
 
 adb shell settings put global adaptive_battery_management_enabled 1
 
@@ -33,4 +34,5 @@ adb shell settings put global battery_saver_constants vibration_disabled=true,fo
 
 adb shell settings put global anomaly_detection_constants anomaly_detection_enabled=true,wakelock_enabled=false,wakeup_alarm_enabled=false
 
-pm disable --user 0 com.google.android.gms/com.google.android.gms.update.SystemUpdateActivity
+pm disable --user 0 com.google.android.gms/.phenotype.service.sync.PhenotypeConfigurator
+
