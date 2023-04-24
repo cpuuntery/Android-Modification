@@ -1,0 +1,1137 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<package-restrictions>
+    <pkg name="com.evenwell.PowerMonitor.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.mediatek.ims" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.android.cts.priv.ctsshim" ceDataInode="752320" stopped="true" scaleRatio="None" />
+    <pkg name="com.gd.mobicore.pa" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.google.android.youtube" inst="false" stopped="true" nl="true" enabled="3" enabledCaller="com.android.settings" scaleRatio="None" domainVerificationStatus="2" />
+    <pkg name="com.aurora.adroid" ceDataInode="752456" scaleRatio="18:9">
+        <disabled-components>
+            <item name="com.aurora.adroid.receiver.BootReceiver" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.evenwell.android.memo.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.android.internal.display.cutout.emulation.corner" ceDataInode="752329" stopped="true" scaleRatio="None" />
+    <pkg name="com.google.android.ext.services" ceDataInode="752203" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None" />
+    <pkg name="com.evenwell.backuptool.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.android.internal.display.cutout.emulation.double" ceDataInode="752335" stopped="true" scaleRatio="None" />
+    <pkg name="com.android.providers.telephony" ceDataInode="752209" stopped="true" scaleRatio="None" />
+    <pkg name="com.evenwell.autoregistration.overlay.d.base.s600ww" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.google.android.googlequicksearchbox" ceDataInode="752341" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None">
+        <enabled-components>
+            <item name="com.android.launcher3.LauncherProvider" />
+            <item name="com.google.android.apps.gsa.staticplugins.opa.EnterOpaActivityFromDeeplink" />
+            <item name="com.google.android.googlequicksearchbox.SearchActivity" />
+            <item name="com.google.android.apps.gsa.staticplugins.opa.hq.OpaHqActivity" />
+            <item name="com.google.android.apps.gsa.assistant.settings.hq.agentdirectory.AgentDirectoryActivity" />
+        </enabled-components>
+        <disabled-components>
+            <item name="com.google.android.apps.gsa.soundsearchwidget.IntentWidgetProvider" />
+            <item name="com.android.launcher3.InstallShortcutReceiver" />
+            <item name="com.android.launcher3.PackageSessionCommitReceiver" />
+            <item name="com.google.android.apps.gsa.languagepack.ZipDownloadReceiver" />
+            <item name="com.google.android.apps.gsa.search.core.google.gaia.changed.AccountsChangedReceiver" />
+            <item name="com.google.android.apps.gsa.broadcastreceiver.external.ExternalCommonBroadcastReceiver" />
+            <item name="com.android.launcher3.WallpaperCropActivity" />
+            <item name="com.google.android.apps.gsa.notificationlistener.NotificationListenerBroadcastReceiver" />
+            <item name="com.google.android.apps.gsa.sidekick.main.endpoints.SwitchAccountReceiver" />
+            <item name="com.google.android.apps.sidekick.widget.PredictiveCardsWidgetProvider" />
+            <item name="com.google.android.apps.gsa.broadcastreceiver.external.PixelLauncherBroadcastReceiver" />
+            <item name="com.google.android.apps.gsa.googlequicksearchbox.GelStubAppWatcher" />
+            <item name="com.google.android.apps.gsa.tasks.AlarmWakefulBroadcastReceiver" />
+            <item name="com.google.android.apps.gsa.shared.search.RestrictedProfileBroadcastReceiver" />
+            <item name="com.google.android.apps.gsa.voiceime.alternates.SuggestionSpanBroadcastReceiver" />
+            <item name="com.google.android.apps.gsa.bloblobber.receiver.BlobDownloadedReceiver" />
+            <item name="com.google.android.libraries.flashmanagement.cleardatadetector.DummyReceiver" />
+            <item name="com.google.android.apps.gsa.search.core.logging.eventprocessor.googletagmanager.ReferrerTrackingReceiver" />
+            <item name="com.google.android.apps.gsa.configuration.PhenotypeBroadcastReceiver" />
+            <item name="com.google.android.apps.gsa.reflection.ReflectionReceiver" />
+            <item name="com.google.android.apps.gsa.sidekick.main.trigger.service.TriggerConditionReceiver" />
+            <item name="com.google.android.apps.gsa.search.core.GelTermsAcceptedReceiver" />
+            <item name="com.google.android.apps.gsa.gcm.GcmBroadcastReceiver" />
+            <item name="com.google.firebase.iid.FirebaseInstanceIdReceiver" />
+            <item name="com.google.android.googlequicksearchbox.VoiceSearchActivity" />
+            <item name="com.android.launcher3.AddItemActivity" />
+            <item name="com.google.android.apps.gsa.startup.StartUpReceiver" />
+            <item name="com.google.android.apps.gsa.silentfeedback.SilentFeedbackReceiver" />
+            <item name="com.android.launcher3.StartupReceiver" />
+            <item name="com.google.android.apps.gsa.broadcastreceiver.external.PreNCalendarBroadcastReceiver" />
+            <item name="com.google.android.voicesearch.intentapi.IntentApiReceiver" />
+            <item name="com.google.android.apps.gsa.search.core.backgroundretry.BackgroundRetryNotificationReceiver" />
+            <item name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" />
+            <item name="com.google.android.apps.gsa.proactive.RequestScheduleEvaluatorReceiver" />
+            <item name="com.google.android.apps.gsa.search.core.LocaleChangedReceiver" />
+            <item name="com.google.android.apps.gsa.launcher.GelWallpaperPickerActivity" />
+            <item name="com.google.android.apps.gsa.search.core.udc.UdcSettingBroadcastReceiver" />
+            <item name="com.google.android.apps.gsa.staticplugins.smartspace.widget.SmartspaceWidgetProvider" />
+            <item name="com.android.launcher3.AppWidgetsRestoredReceiver" />
+            <item name="com.google.android.apps.gsa.reminders.RemindersBroadcastReceiver" />
+            <item name="com.google.android.apps.gsa.broadcastreceiver.CommonBroadcastReceiver" />
+            <item name="com.google.android.apps.gsa.sidekick.main.notifications.NotificationRefreshReceiver" />
+            <item name="com.google.android.apps.gsa.search.core.GservicesBroadcastReceiver" />
+            <item name="com.google.android.gms.measurement.AppMeasurementReceiver" />
+            <item name="com.google.android.launcher.GEL" />
+            <item name="com.google.android.apps.gsa.sidekick.main.endpoints.AccountsUpdateReceiver" />
+            <item name="com.google.android.googlequicksearchbox.SearchWidgetProvider" />
+            <item name="com.google.android.apps.gsa.search.core.GmsPackageWatcher" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.hmdglobal.datago" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.android.providers.calendar" ceDataInode="752347" scaleRatio="None" />
+    <pkg name="com.android.contacts.overlay.base" ceDataInode="752351" stopped="true" scaleRatio="None" />
+    <pkg name="in.krosbits.musicolet" ceDataInode="752406" scaleRatio="18:9" install-reason="4">
+        <enabled-components>
+            <item name="androidx.work.impl.background.systemalarm.RescheduleReceiver" />
+            <item name="androidx.work.impl.background.systemjob.SystemJobService" />
+        </enabled-components>
+    </pkg>
+    <pkg name="org.telegram.messenger" ceDataInode="760904" scaleRatio="None" install-reason="4">
+        <disabled-components>
+            <item name="org.telegram.messenger.AppStartReceiver" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.evenwell.nps.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.android.providers.media" ceDataInode="752357" scaleRatio="None" />
+    <pkg name="com.arlosoft.macrodroid" ceDataInode="768572" scaleRatio="18:9" domainVerificationStatus="2" app-link-generation="6">
+        <enabled-components>
+            <item name="com.arlosoft.macrodroid.cloudmessaging.MacroDroidFirebaseMessagingService" />
+            <item name="com.google.firebase.components.ComponentDiscoveryService" />
+            <item name="androidx.work.impl.background.systemjob.SystemJobService" />
+        </enabled-components>
+    </pkg>
+    <pkg name="com.google.android.onetimeinitializer" ceDataInode="752360" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None" />
+    <pkg name="com.google.android.ext.shared" ceDataInode="752215" stopped="true" scaleRatio="None" />
+    <pkg name="com.android.systemui.btl.s600ww.overlay" ceDataInode="752363" stopped="true" scaleRatio="None" />
+    <pkg name="com.mediatek.location.lppe.main" ceDataInode="752366" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None" />
+    <pkg name="com.kiwibrowser.browser" ceDataInode="752864" scaleRatio="18:9" install-reason="4">
+        <enabled-components>
+            <item name="org.chromium.chrome.browser.quickactionsearchwidget.QuickActionSearchWidgetProvider$QuickActionSearchWidgetProviderDino" />
+            <item name="org.chromium.chrome.browser.incognito.IncognitoTabLauncher" />
+            <item name="org.chromium.chrome.browser.quickactionsearchwidget.QuickActionSearchWidgetProvider$QuickActionSearchWidgetProviderSearch" />
+        </enabled-components>
+        <disabled-components>
+            <item name="org.chromium.chrome.browser.media.MediaLauncherActivity" />
+            <item name="org.chromium.chrome.browser.media.AudioLauncherActivity" />
+            <item name="androidx.work.impl.background.systemalarm.RescheduleReceiver" />
+            <item name="org.chromium.chrome.browser.sharing.shared_clipboard.SharedClipboardShareActivity" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.android.wallpapercropper" ceDataInode="752369" stopped="true" scaleRatio="None" />
+    <pkg name="com.evenwell.legalterm.overlay.d.base.s600ww" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.android.protips" ceDataInode="752375" stopped="true" scaleRatio="None" />
+    <pkg name="com.androidinspain.deskclock" ceDataInode="752412" scaleRatio="18:9" />
+    <pkg name="com.moez.QKSMS" ceDataInode="760732" scaleRatio="18:9">
+        <disabled-components>
+            <item name="com.moez.QKSMS.receiver.BootReceiver" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.speedsoftware.rootexplorer" ceDataInode="768545" scaleRatio="None" />
+    <pkg name="com.evenwell.permissioncontrol.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.android.bluetooth.auto_generated_rro__" ceDataInode="752381" stopped="true" scaleRatio="None" />
+    <pkg name="com.android.documentsui" ceDataInode="752384" scaleRatio="None" />
+    <pkg name="android.auto_generated_rro__" ceDataInode="752387" stopped="true" scaleRatio="None" />
+    <pkg name="com.android.externalstorage" ceDataInode="752390" scaleRatio="None" />
+    <pkg name="com.android.providers.settings.overlay.d.base.s600ww" ceDataInode="752393" stopped="true" scaleRatio="None" />
+    <pkg name="com.android.htmlviewer" ceDataInode="752396" scaleRatio="None" />
+    <pkg name="com.ghisler.android.TotalCommander" ceDataInode="753823" scaleRatio="None" install-reason="4" />
+    <pkg name="com.android.companiondevicemanager" ceDataInode="752399" stopped="true" scaleRatio="None" />
+    <pkg name="com.android.mms.service" ceDataInode="752218" scaleRatio="None" />
+    <pkg name="com.nbc.allinonescanner.overlay.d.base.s600ww" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.evenwell.partnerbrowsercustomizations.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.android.providers.downloads" ceDataInode="752408" scaleRatio="None" />
+    <pkg name="com.google.android.apps.messaging" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.hmdglobal.US601.messaging.overlay.base" ceDataInode="752414" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None" />
+    <pkg name="me.zhanghai.android.files" ceDataInode="753766" scaleRatio="18:9" install-reason="4" />
+    <pkg name="com.evenwell.nps.overlay.d.base.s600ww" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.evenwell.music.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.evenwell.bboxsbox" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.evenwell.UsageStatsLogReceiver.data.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.evenwell.permissiondetection" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="org.schabi.newpipe" ceDataInode="752446" scaleRatio="18:9">
+        <enabled-components>
+            <item name="androidx.work.impl.background.systemjob.SystemJobService" />
+        </enabled-components>
+        <disabled-components>
+            <item name="androidx.work.impl.background.systemalarm.RescheduleReceiver" />
+        </disabled-components>
+    </pkg>
+    <pkg name="eu.thedarken.sdm.unlocker" ceDataInode="761739" stopped="true" scaleRatio="18:9">
+        <disabled-components>
+            <item name="eu.thedarken.sdm.unlocker.MainActivity" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.google.android.configupdater" ceDataInode="752432" scaleRatio="None" />
+    <pkg name="com.simplemobiletools.calendar.pro" ceDataInode="762396" scaleRatio="18:9">
+        <disabled-components>
+            <item name="com.simplemobiletools.calendar.pro.receivers.BootCompletedReceiver" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.android.providers.calendar.overlay.d.base.s600ww" ceDataInode="752435" stopped="true" scaleRatio="None" />
+    <pkg name="com.evenwell.settings.data.overlay.d.base.s600ww" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.mediatek.wfo.impl" ceDataInode="752221" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None" />
+    <pkg name="com.evenwell.factorywizard" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.android.defcontainer" ceDataInode="752227" scaleRatio="None" />
+    <pkg name="com.evenwell.providers.partnerbookmarks.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.google.ar.lens" ceDataInode="752447" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None" />
+    <pkg name="com.android.providers.downloads.ui" ceDataInode="752450" stopped="true" scaleRatio="None" />
+    <pkg name="com.android.vending" ceDataInode="752537" scaleRatio="None">
+        <enabled-components>
+            <item name="com.google.android.finsky.protect.impl.PlayProtectHomeDeepLinkActivity" />
+            <item name="com.google.android.finsky.protect.ExternalPlayProtectHomeEntryPoint" />
+            <item name="com.google.android.finsky.instantapps.ContentFilterUpdatedReceiver" />
+            <item name="com.google.android.finsky.prewarmservice.PrewarmService" />
+            <item name="com.google.android.finsky.instantapps.appmanagement.InstantAppRemoveMonitor" />
+            <item name="com.google.android.finsky.hibernation.impl.UnhibernateActivity" />
+            <item name="com.google.android.finsky.instantapps.InstantAppsConfigChangeListener" />
+            <item name="com.google.android.finsky.instantapps.EphemeralInstallerActivity" />
+            <item name="com.android.vending.AssetBrowserActivity" />
+            <item name="com.google.android.finsky.setupui.VpaSelectionOptionalStepActivity" />
+        </enabled-components>
+        <disabled-components>
+            <item name="com.google.android.finsky.permissionrevocation.UnusedAppRestrictionsBackportService" />
+            <item name="com.google.android.finsky.systemcomponentupdateui.SystemComponentUpdateActivity" />
+            <item name="com.google.android.finsky.wearsupport.WearSupportService" />
+            <item name="com.google.android.finsky.systemupdateactivity.SystemUpdateActivity" />
+            <item name="com.google.android.finsky.boothandler.BootCompletedReceiver" />
+            <item name="com.google.android.finsky.systemupdateactivity.SettingsSecurityEntryPoint" />
+            <item name="com.google.android.finsky.activities.DebugActivity" />
+            <item name="com.google.android.finsky.instantapps.dna.ArchiveDownloadBroadcastReceiver" />
+            <item name="com.google.android.finsky.protect.PermissionAutoRevocationSettingsPage" />
+            <item name="com.google.android.finsky.permissionrevocation.UnusedAppRestrictionsPublicService" />
+            <item name="com.google.android.finsky.wearsupport.WearChangeListenerService" />
+            <item name="com.google.android.finsky.systemcomponentupdate.SystemComponentUpdateActivity" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.android.pacprocessor" ceDataInode="752457" stopped="true" scaleRatio="None" />
+    <pkg name="com.android.simappdialog" ceDataInode="752460" stopped="true" scaleRatio="None" />
+    <pkg name="com.arkamys.audio" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.evenwell.foxlauncher.partner" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.evenwell.telecom.data.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.android.internal.display.cutout.emulation.tall" ceDataInode="752469" stopped="true" scaleRatio="None" />
+    <pkg name="com.android.certinstaller" ceDataInode="752472" stopped="true" scaleRatio="None" />
+    <pkg name="com.android.carrierconfig" ceDataInode="752475" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None" />
+    <pkg name="com.google.android.marvin.talkback" ceDataInode="752478" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None">
+        <disabled-components>
+            <item name="com.google.android.accessibility.talkback.BootReceiver" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.google.android.apps.work.oobconfig" ceDataInode="752481" enabled="2" enabledCaller="com.google.android.apps.work.oobconfig" scaleRatio="None">
+        <disabled-components>
+            <item name="com.google.android.apps.work.oobconfig.gservices.GservicesChangedObserverService" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.android.mms.overlay.base" ceDataInode="752484" stopped="true" scaleRatio="None" />
+    <pkg name="android" ceDataInode="752236" scaleRatio="None" />
+    <pkg name="com.android.launcher3.overlay.base" ceDataInode="752487" stopped="true" scaleRatio="None" />
+    <pkg name="com.evenwell.custmanager.data.overlay.d.base.s600ww" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.android.contacts" ceDataInode="752404" scaleRatio="18:9">
+        <disabled-components>
+            <item name="com.android.contacts.interactions.OnBootOrUpgradeReceiver" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.evenwell.custmanager.data.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="android.autoinstalls.config.NBB.A1" ceDataInode="752496" stopped="true" scaleRatio="None" />
+    <pkg name="org.mozilla.fennec_fdroid" ceDataInode="752463" scaleRatio="None">
+        <disabled-components>
+            <item name="org.mozilla.mozstumbler.service.mainthread.SystemReceiver" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.evenwell.bokeheditor.overlay.d.base.s600ww" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.android.egg" ceDataInode="752502" stopped="true" scaleRatio="None" />
+    <pkg name="com.android.mtp" ceDataInode="752505" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None" />
+    <pkg name="com.android.nfc" ceDataInode="752508" enabled="2" enabledCaller="com.android.nfc" scaleRatio="None">
+        <disabled-components>
+            <item name="com.android.nfc.NfcBootCompletedReceiver" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.android.stk" ceDataInode="752514" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None">
+        <enabled-components>
+            <item name="com.android.stk.StkMain" />
+        </enabled-components>
+    </pkg>
+    <pkg name="com.android.launcher3" ceDataInode="752517" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None" />
+    <pkg name="com.android.backupconfirm" ceDataInode="752520" scaleRatio="None" />
+    <pkg name="com.hmdglobal.camera2" ceDataInode="752523" scaleRatio="None" />
+    <pkg name="org.ungoogled.chromium.extensions.stable" ceDataInode="753445" scaleRatio="18:9">
+        <enabled-components>
+            <item name="org.chromium.chrome.browser.incognito.IncognitoTabLauncher" />
+        </enabled-components>
+        <disabled-components>
+            <item name="org.chromium.chrome.browser.locale.LocaleChangedBroadcastReceiver" />
+            <item name="org.chromium.chrome.browser.upgrade.PackageReplacedBroadcastReceiver" />
+            <item name="org.chromium.chrome.browser.media.MediaLauncherActivity" />
+            <item name="org.chromium.chrome.browser.media.AudioLauncherActivity" />
+            <item name="org.chromium.chrome.browser.sharing.click_to_call.ClickToCallMessageHandler$PhoneUnlockedReceiver" />
+            <item name="org.chromium.chrome.browser.sharing.shared_clipboard.SharedClipboardShareActivity" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.google.android.deskclock" ceDataInode="752373" stopped="true" enabled="3" enabledCaller="com.android.settings" scaleRatio="None" />
+    <pkg name="com.android.systemui.overlay.d.base.s600ww" ceDataInode="752529" scaleRatio="None" />
+    <pkg name="com.evenwell.legalterm.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.evenwell.stbmonitor.data.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.android.statementservice" ceDataInode="752538" scaleRatio="None" />
+    <pkg name="com.evenwell.permissiondetection.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.google.android.as" ceDataInode="752544" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None" />
+    <pkg name="com.google.android.gm" ceDataInode="752750" enabled="3" enabledCaller="com.android.settings" scaleRatio="None" />
+    <pkg name="com.evenwell.fqc" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.evenwell.nps" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.zacharee1.systemuituner" ceDataInode="761703" scaleRatio="18:9" install-reason="4">
+        <enabled-components>
+            <item name="androidx.work.impl.background.systemjob.SystemJobService" />
+        </enabled-components>
+        <disabled-components>
+            <item name="com.zacharee1.systemuituner.receivers.BootReceiver" />
+            <item name="androidx.work.impl.background.systemalarm.RescheduleReceiver" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.evenwell.settings.data.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.android.settings.intelligence" ceDataInode="752560" scaleRatio="None" />
+    <pkg name="com.android.systemui.theme.dark" ceDataInode="752563" scaleRatio="None" />
+    <pkg name="com.evenwell.phone.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.evenwell.deskclock.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.fih.infodisplay" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.google.android.setupwizard" ceDataInode="752575" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None">
+        <disabled-components>
+            <item name="com.google.android.setupwizard.deferred.PostSetupLifecycleBootReceiver" />
+            <item name="com.google.android.setupwizard.SetupWizardActivity" />
+            <item name="com.google.android.setupwizard.deferred.ComponentStateMitigationReceiver" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.evenwell.atcommand" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.android.providers.settings" ceDataInode="752242" scaleRatio="None" />
+    <pkg name="com.android.cellbroadcastreceiver.overlay.base" ceDataInode="752581" scaleRatio="None" />
+    <pkg name="com.android.retaildemo.overlay.base" ceDataInode="752584" scaleRatio="None" />
+    <pkg name="com.android.sharedstoragebackup" ceDataInode="752587" scaleRatio="None" />
+    <pkg name="com.evenwell.firewall.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.evenwell.autoregistration" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.android.printspooler" ceDataInode="752596" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None" />
+    <pkg name="com.evenwell.legalterm" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.android.dreams.basic" ceDataInode="752602" scaleRatio="None" />
+    <pkg name="com.sujanpoudel.adbwifi" ceDataInode="761635" scaleRatio="18:9" install-reason="4" />
+    <pkg name="com.android.se" ceDataInode="752605" scaleRatio="None" />
+    <pkg name="com.android.inputdevices" ceDataInode="752248" scaleRatio="None" />
+    <pkg name="com.google.android.apps.wellbeing" ceDataInode="752608" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None">
+        <disabled-components>
+            <item name="com.google.android.apps.wellbeing.autodnd.ui.AutoDndUiBootCompletedBroadcastReceiver_Receiver" />
+            <item name="com.google.android.apps.wellbeing.winddown.impl.WindDownNextAlarmClockChangedBroadcastReceiver_Receiver" />
+            <item name="com.google.apps.tiktok.delayedtasks.constraints.onnetworkconnected.OnNetworkConnectedConstraintReceiver_Receiver" />
+            <item name="com.google.android.apps.wellbeing.winddown.impl.WindDownPackageReplacedBroadcastReceiver_Receiver" />
+            <item name="com.google.apps.tiktok.delayedtasks.constraints.oncharger.OnChargerConstraintReceiver_Receiver" />
+            <item name="com.google.apps.tiktok.sync.impl.SyncBootReceiver_Receiver" />
+            <item name="com.google.android.apps.wellbeing.appconfig.limit.impl.BootCompletedBroadcastReceiver_Receiver" />
+            <item name="com.google.apps.tiktok.sync.impl.gcm.SyncGmsPackageUpdatedReceiver_Receiver" />
+            <item name="com.google.android.apps.wellbeing.autodnd.impl.AutoDndManagerPackageReplacedBroadcastReceiver_Receiver" />
+            <item name="com.google.android.apps.wellbeing.appusage.impl.AppUsageBootCompletedBroadcastReceiver_Receiver" />
+            <item name="com.google.android.apps.wellbeing.appusage.impl.AppUsageTimeChangedBroadcastReceiver_Receiver" />
+            <item name="com.google.android.apps.wellbeing.autodnd.impl.AutoDndBootCompletedBroadcastReceiver_Receiver" />
+            <item name="com.google.android.apps.wellbeing.autodnd.ui.AutoDndUiPackageReplacedBroadcastReceiver_Receiver" />
+            <item name="com.google.android.apps.wellbeing.winddown.impl.WindDownBootCompletedBroadcastReceiver_Receiver" />
+            <item name="com.google.android.apps.wellbeing.appconfig.limit.impl.TimeChangeBroadcastReceiver_Receiver" />
+            <item name="com.google.android.apps.wellbeing.screen.ui.GrayscaleTileDisablingBroadcastReceiver_Receiver" />
+            <item name="com.google.android.apps.wellbeing.autodnd.ui.AutoDndGesturesSettingsActivity" />
+            <item name="com.google.apps.tiktok.delayedtasks.constraints.onnetworkunmetered.OnNetworkUnmeteredConstraintReceiver_Receiver" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.google.android.dialer" ceDataInode="752251" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None" />
+    <pkg name="com.android.retaildemo" ceDataInode="752611" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None" />
+    <pkg name="com.android.providers.partnerbookmarks.btl.s600ww.overlay" ceDataInode="752614" scaleRatio="None" />
+    <pkg name="com.android.bips" ceDataInode="752617" scaleRatio="None" />
+    <pkg name="com.mediatek" ceDataInode="752254" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None" />
+    <pkg name="com.evenwell.stbmonitor" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.google.android.apps.nbu.files" ceDataInode="752623" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None">
+        <disabled-components>
+            <item name="com.google.apps.tiktok.sync.constraints.onnetworkconnected.OnNetworkConnectedConstraintReceiver_Receiver" />
+            <item name="com.google.android.apps.nbu.files.gateway.preview.DisablePreviewActivityReceiver_Receiver" />
+            <item name="com.google.android.apps.nbu.files.notifications.receiver.BootCompleteReceiver_Receiver" />
+            <item name="com.google.apps.tiktok.sync.impl.SyncBootReceiver_Receiver" />
+            <item name="com.google.apps.tiktok.sync.constraints.oncharger.OnChargerConstraintReceiver_Receiver" />
+            <item name="com.google.apps.tiktok.sync.impl.gcm.SyncGmsPackageUpdatedReceiver_Receiver" />
+            <item name="com.google.apps.tiktok.sync.constraints.onnetworkunmetered.OnNetworkUnmeteredConstraintReceiver_Receiver" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.android.settings.btl.s600ww.overlay" ceDataInode="752626" scaleRatio="None" />
+    <pkg name="com.evenwell.PowerMonitor" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.evenwell.retaildemoapp.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.example" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.evenwell.providers.weather.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.android.systemui.overlay.base" ceDataInode="752641" scaleRatio="None" />
+    <pkg name="com.google.android.apps.docs" ceDataInode="752647" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None" domainVerificationStatus="2" app-link-generation="3" />
+    <pkg name="com.google.android.apps.maps" ceDataInode="752650" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None" domainVerificationStatus="2" app-link-generation="4" />
+    <pkg name="com.evenwell.hyperclip.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.evenwell.AprUploadService" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.evenwell.fmradio.overlay.d.base.s600ww" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.evenwell.factorywizard.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.evenwell.batteryprotect" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.android.cellbroadcastreceiver" ceDataInode="752668" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None" />
+    <pkg name="com.google.android.webview" ceDataInode="752332" stopped="true" scaleRatio="None" />
+    <pkg name="android.btl.s600ww.overlay" ceDataInode="752674" scaleRatio="None" />
+    <pkg name="com.google.android.contacts" ceDataInode="752314" enabled="3" enabledCaller="com.android.settings" scaleRatio="None" />
+    <pkg name="com.android.server.telecom" ceDataInode="752260" scaleRatio="None" />
+    <pkg name="com.google.android.syncadapters.contacts" ceDataInode="752680" stopped="true" enabled="3" enabledCaller="com.android.settings" scaleRatio="None" />
+    <pkg name="android.framework.d.base.s600ww" ceDataInode="752683" scaleRatio="None" />
+    <pkg name="com.android.facelock" ceDataInode="752686" scaleRatio="None" />
+    <pkg name="com.android.keychain" ceDataInode="752689" scaleRatio="None" />
+    <pkg name="com.android.chrome" ceDataInode="752692" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None" />
+    <pkg name="com.evenwell.weather.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.android.dialer" ceDataInode="768588" scaleRatio="18:9">
+        <disabled-components>
+            <item name="com.android.dialer.app.calllog.CallLogReceiver" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.google.android.packageinstaller" ceDataInode="752266" scaleRatio="None" />
+    <pkg name="com.google.android.gms" ceDataInode="776733" scaleRatio="None" domainVerificationStatus="2" app-link-generation="7">
+        <enabled-components>
+            <item name="com.google.android.gms.family.v2.create.FamilyCreationActivity" />
+            <item name="com.google.android.gms.nearby.sharing.ReceiveSurfaceService" />
+            <item name="com.google.android.gms.carsetup.wifi.CarWifiConnectionService" />
+            <item name="com.google.android.gms.auth.account.mdm.GcmReceiverService" />
+            <item name="com.google.android.gms.matchstick.net.MessagingService" />
+            <item name="com.google.android.gms.thunderbird.config.EmergencyConfigContentProvider" />
+            <item name="com.google.android.gms.autofill.ui.AutofillActivity" />
+            <item name="com.google.android.gms.googlehelp.webview.GoogleHelpRenderingApiWebViewActivity" />
+            <item name="com.google.android.gms.accountsettings.ui.SettingsLoaderActivity" />
+            <item name="com.google.android.gms.nearby.setup.ui.WifiConsentActivity" />
+            <item name="com.google.android.gms.app.search.GmsSearchIndexablesProvider" />
+            <item name="com.google.android.gms.mdm.settings.AdmSettingsActivity" />
+            <item name="com.google.android.gms.fido.fido2.ui.PolluxActivity" />
+            <item name="com.google.android.gms.vision.DependencyBroadcastReceiverProxy" />
+            <item name="com.google.android.gms.nearby.discovery.ui.DiscoveryChromeTabActivity" />
+            <item name="com.google.android.gms.auth.managed.ui.PhoneskyDpcInstallActivity" />
+            <item name="com.google.android.gms.magictether.host.TetherListenerService" />
+            <item name="com.google.android.gms.auth.account.be.UpdatePostAccountSetupStatusIntentService" />
+            <item name="com.google.android.gms.udc.service.UdcContextInitService" />
+            <item name="com.google.android.gms.growth.upgradeparty.activity.DebugActivity" />
+            <item name="com.google.android.gms.matchstick.contacts.sync.TachystickAccountService" />
+            <item name="com.google.android.gms.matchstick.GcmBroadcastReceiver" />
+            <item name="com.google.android.gms.auth.account.visibility.RequestAccountsAccessActivity" />
+            <item name="com.google.android.gms.sesame.service.SesameLocationTaskService" />
+            <item name="com.google.android.gms.auth.proximity.GcmBroadcastReceiver" />
+            <item name="com.google.android.gms.trustagent.discovery.WebpageOnbodyPromotionActivity" />
+            <item name="com.google.android.gms.auth.authzen.magicwand.MagicWandBarcodeScannerActivity" />
+            <item name="com.google.android.gms.wallet.activity.GenericDelegatorInternalActivity" />
+            <item name="com.google.android.gms.mdm.services.GcmReceiverService" />
+            <item name="com.google.android.gms.mobiledataplan.gcm.GcmBroadcastReceiver" />
+            <item name="com.google.android.gms.subscribedfeeds.GcmReceiverService" />
+            <item name="com.google.android.gms.family.v2.invites.SendInvitationsActivity" />
+            <item name="com.google.android.gms.auth.authzen.transaction.secondscreen.SecondScreenGetTokenActivity" />
+            <item name="com.google.android.gms.matchstick.ui.MessageActivity" />
+            <item name="com.google.android.gms.trustagent.PreferenceService" />
+            <item name="com.google.android.gms.languageprofile.GcmTaskService" />
+            <item name="com.google.android.gms.wallet.redirect.FinishAndroidAppRedirectProxyActivity" />
+            <item name="com.google.android.gms.mdm.receivers.RetryAfterAlarmReceiver" />
+            <item name="com.google.android.gms.auth.authzen.cryptauth.DialerSecretCodeReceiver" />
+            <item name="com.google.android.gms.security.provider.SecurityProvider" />
+            <item name="com.google.android.gms.autofill.ui.AutofillDialogActivity" />
+            <item name="com.google.android.gms.app.net.NetworkUsageActivityAdvanced" />
+            <item name="com.google.android.gms.udc.ui.UdcSettingsListActivity" />
+            <item name="com.google.android.gms.measurement.PackageMeasurementReceiver" />
+            <item name="com.google.android.gms.backup.component.D2dSourceService" />
+            <item name="com.google.android.gms.constellation.ui.ConstellationOnDemandConsentActivity" />
+            <item name="com.google.android.gms.auth.uiflows.addaccount.UncertifiedNotificationActivity" />
+            <item name="com.google.android.gms.autofill.ui.AutofillTransparentActivity" />
+            <item name="com.google.android.gms.nearby.exposurenotification.settings.SettingsCheckerActivity" />
+            <item name="com.google.android.gms.matchstick.data.AppDataProvider" />
+            <item name="com.google.android.gms.clearcut.debug.ClearcutDebugDumpService" />
+            <item name="com.google.android.gms.kids.settings.KidsSettingsActivity" />
+            <item name="com.google.android.gms.nearby.discovery.fastpair.FindDeviceActivity" />
+            <item name="com.google.android.gms.family.v2.tos.TosActivity" />
+            <item name="com.google.android.gms.security.settings.VerifyAppsSettingsActivity" />
+            <item name="com.google.android.gms.auth.authzen.AuthzenDeeplinkHandlerActivity" />
+            <item name="com.google.android.gms.backup.component.NoBackupNotificationService" />
+            <item name="com.google.android.gms.people.pub.PeopleProfileActionGatewayActivity" />
+            <item name="com.google.android.gms.backup.mms.MmsBackupService" />
+            <item name="com.google.android.gms.trustagent.discovery.PromoteScreenLockAndOnbodyActivity" />
+            <item name="com.google.android.gms.family.webview.FamilyWebViewActivity" />
+            <item name="com.google.android.gms.auth.folsom.service.FolsomPublicKeyUpdateService" />
+            <item name="com.google.android.gms.app.settings.DataManagementActivity" />
+            <item name="com.google.android.gms.constellation.GcmBroadcastReceiver" />
+            <item name="com.google.android.gms.octarine.ui.OctarineWebviewActivity" />
+            <item name="com.google.android.gms.pay.deeplink.DeepLinkActivity" />
+            <item name="com.google.android.gms.backup.component.D2dSourceActivity" />
+            <item name="com.google.android.gms.location.settings.LocationAccuracyActivity" />
+            <item name="com.google.android.gms.auth.api.credentials.openyolo.provider.HintActivity" />
+            <item name="com.google.android.gms.magictether.logging.DailyMetricsLoggerService" />
+            <item name="com.google.android.gms.matchstick.ui.LighterMessageIntentActivity" />
+            <item name="com.google.android.gms.nearby.messages.offline.OfflineCachingService" />
+            <item name="com.google.android.gms.feedback.ui.compose.ComposeFeedbackActivity" />
+            <item name="com.google.android.gms.fido.fido2.pollux.CableAuthenticatorService" />
+            <item name="com.google.android.gms.constellation.ui.ConstellationDebugActivity" />
+            <item name="com.google.android.gms.update.OtaSuggestionSummaryProvider" />
+            <item name="com.google.android.gms.smartdevice.d2d.ui.SourceDirectTransferActivity" />
+            <item name="com.google.firebase.auth.api.gms.ui.BrowserSignInStarterActivity" />
+            <item name="com.google.android.gms.magictether.host.ProvisioningFailedDialogActivity" />
+            <item name="com.google.android.gms.backup.component.BackupSettingsActivity" />
+            <item name="com.google.android.gms.people.sync.coreui.ContactsSyncCoreActivity" />
+            <item name="com.google.android.gms.auth.api.phone.ui.AutofillConsentActivity" />
+            <item name="com.google.android.gms.security.recaptcha.RecaptchaActivity" />
+            <item name="com.google.android.gms.thunderbird.settings.ThunderbirdSettingsActivity" />
+            <item name="com.google.android.gms.car.StopperActivity" />
+            <item name="com.google.android.gms.udc.ui.AuthenticatingWebViewActivity" />
+            <item name="com.google.android.gms.matchstick.data.DatabaseProvider" />
+            <item name="com.google.android.gms.autofill.ui.AutofillSettingsActivity" />
+            <item name="com.google.android.gms.smartdevice.d2d.ui.ForwardingActivity" />
+            <item name="com.google.android.gms.smartdevice.setup.ui.AccountChallengeActivity" />
+            <item name="com.google.android.gms.auth.proximity.multidevice.SettingsContentProvider" />
+            <item name="com.google.android.gms.contactinteractions.service.ContactInteractionsTaskService" />
+            <item name="com.google.android.gms.fonts.provider.FontsProvider" />
+            <item name="com.google.android.gms.auth.account.accounttransfer.AccountTransferReceiver" />
+            <item name="com.google.android.gms.mdm.LockscreenActivityPermissionTrampoline" />
+            <item name="com.google.android.gms.constellation.ui.ApiConsentActivity" />
+            <item name="com.google.android.gms.languageprofile.GcmReceiverService" />
+            <item name="com.google.android.gms.smartdevice.magicwand.MagicWandActivity" />
+            <item name="com.google.android.gms.udc.gcm.GcmBroadcastReceiver" />
+            <item name="com.google.firebase.auth.api.gms.ui.BrowserSignInResponseHandlerActivity" />
+            <item name="com.google.android.gms.fido.u2f.U2fService" />
+            <item name="com.google.android.gms.auth.folsom.service.GcmReceiverService" />
+            <item name="com.google.android.gms.matchstick.settings.MatchstickSettingsActivity" />
+            <item name="com.google.android.gms.matchstick.ui.EntryActivity" />
+            <item name="com.google.android.gms.carsetup.CarSetupService" />
+            <item name="com.google.android.gms.matchstick.contacts.reachability.ReachabilityService" />
+            <item name="com.google.android.location.internal.LocationContentProvider" />
+            <item name="com.google.android.gms.nearby.mediums.nearfieldcommunication.NfcAdvertisingService" />
+            <item name="com.google.android.gms.auth.api.credentials.openyolo.provider.SaveCredentialActivity" />
+            <item name="com.google.android.gms.mdm.LockscreenActivity" />
+            <item name="com.google.android.gms.nearby.exposurenotification.service.ExposureMatchingService" />
+            <item name="com.google.android.gms.nearby.discovery.devices.DevicesListActivity" />
+            <item name="com.google.android.gms.wallet.ib.PaisaCompatActivity" />
+            <item name="com.google.android.gms.family.v2.manage.FamilyManagementActivity" />
+            <item name="com.google.android.gms.googlehelp.GcmBroadcastReceiver" />
+            <item name="com.google.android.gms.backup.component.SetBackupAccountFlowActivity" />
+            <item name="com.google.android.gms.accountsettings.service.PurgeScreenDataService" />
+            <item name="com.google.android.gms.mdm.receivers.MdmDeviceAdminReceiver" />
+            <item name="com.google.android.gms.auth.api.credentials.openyolo.provider.RetrieveCredentialActivity" />
+            <item name="com.google.android.gms.fido.client.ui.FidoClientActivity" />
+            <item name="com.google.android.gms.growth.notifications.GcmBroadcastReceiver" />
+            <item name="com.google.android.gms.subscribedfeeds.GmsFeedsSyncService" />
+            <item name="com.google.android.gms.walletp2p.feature.transfer.TransferMoneyActivity" />
+            <item name="com.google.android.gms.lockbox.LockboxAlarmReceiver" />
+            <item name="com.google.android.gms.backup.mms.MmsRestoreService" />
+            <item name="com.google.android.gms.wallet.GcmReceiverService" />
+            <item name="com.google.android.gms.magictether.ui.settings.SettingsActivity" />
+            <item name="com.google.android.gms.matchstick.ui.ConversationListActivity" />
+            <item name="com.google.android.gms.measurement.PackageMeasurementTaskService" />
+            <item name="com.google.android.gms.recaptcha.RecaptchaActivity" />
+            <item name="com.google.android.gms.auth.uiflows.addaccount.DmSetScreenlockActivity" />
+            <item name="com.google.android.gms.trustagent.ConfirmUserCredentialAndStartActivity" />
+            <item name="com.google.android.gms.analytics.AnalyticsTaskService" />
+            <item name="com.google.android.gms.matchstick.call.CallActivity" />
+            <item name="com.google.android.gms.matchstick.call.CallEntryActivity" />
+            <item name="com.google.android.location.settings.ActivityRecognitionPermissionActivity" />
+            <item name="com.google.android.gms.wallet.activity.OrchestrationDelegatorActivity" />
+            <item name="com.google.android.gms.auth.managed.ui.EmmActivity" />
+            <item name="com.google.android.gms.matchstick.ui.FullScreenChatActivity" />
+            <item name="com.google.android.gms.auth.easyunlock.registration.bt.RegistrationBleService" />
+            <item name="com.google.android.gms.drive.deprecation.UpgradeDialogActivity" />
+            <item name="com.google.android.gms.fido.authenticator.ui.AuthenticatorActivity" />
+            <item name="com.google.android.gms.mdm.services.DeviceManagerApiService" />
+            <item name="com.google.android.gms.backup.component.FullBackupJobLoggerService" />
+            <item name="com.google.android.gms.mdm.services.RingService" />
+            <item name="com.google.android.gms.romanesco.settings.ContactsRestoreDialogActivity" />
+            <item name="com.google.android.gms.subscriptions.settings.GoogleOneSettingsActivity" />
+            <item name="com.google.android.gms.wallet.activity.GenericDelegatorActivity" />
+            <item name="com.google.android.gms.family.v2.manage.InvitationManagementActivity" />
+            <item name="com.google.android.gms.matchstick.call.CallService" />
+            <item name="com.google.android.gms.accountsettings.ui.PrivacyHubActivityControlsActivity" />
+            <item name="com.google.android.gms.wallet.embeddedsettings.EmbeddedSettingsActivity" />
+            <item name="com.google.android.gms.constellation.checker.RefreshGcmTaskService" />
+            <item name="com.google.android.gms.setupservices.GoogleServicesActivity" />
+            <item name="com.google.android.gms.credential.manager.PasswordManagerActivity" />
+            <item name="com.google.android.gms.auth.setup.devicesignals.LockScreenReceiver" />
+            <item name="com.google.android.gms.romanesco.settings.ContactsRestoreContactsActivity" />
+            <item name="com.google.android.gms.audit.upload.AuditGcmTaskService" />
+            <item name="com.google.android.gms.magictether.host.FirstTimeSetupDialogActivity" />
+            <item name="com.google.android.gms.matchstick.ui.WebAppActivity" />
+            <item name="com.google.android.gms.accountsettings.mg.ui.main.MainActivity" />
+            <item name="com.google.android.gms.nearby.discovery.ui.NotificationSettingsActivity" />
+            <item name="com.google.android.gms.wallet.timelineview.TimeLineViewActivity" />
+            <item name="com.google.android.gms.nearby.discovery.fastpair.slice.FastPairSliceProvider" />
+            <item name="com.google.android.gms.accountsettings.ui.ZeroPartyEntryPointActivity" />
+            <item name="com.google.android.gms.chromesync.sync.GcmBroadcastReceiver" />
+            <item name="com.google.android.gms.carsetup.DiscoverAaSettingsActivity" />
+            <item name="com.google.android.gms.smartdevice.d2d.ui.TargetDirectTransferActivity" />
+            <item name="com.google.android.gms.trustlet.place.ui.TrustedPlacesSettingsActivity" />
+            <item name="com.google.android.gms.lockbox.service.LockboxBrokerService" />
+            <item name="com.google.android.gms.gass.GassService" />
+            <item name="com.google.android.gms.wallet.common.ui.UpdateCallingAppActivity" />
+            <item name="com.google.android.gms.fido.u2f.ui.AuthenticateActivity" />
+            <item name="com.google.android.gms.auth.account.data.WorkAccountStoreReceiver" />
+            <item name="com.google.android.gms.walletp2p.feature.completion.CompleteMoneyTransferActivity" />
+            <item name="com.google.android.gms.mobiledataplan.ui.MobileDataPlanSettingsActivity" />
+            <item name="com.google.android.gms.auth.uiflows.addaccount.FinishSessionActivity" />
+            <item name="com.google.android.gms.nearby.discovery.devices.FindDeviceActivity" />
+            <item name="com.google.android.gms.nearby.discovery.fastpair.HalfSheetActivity" />
+            <item name="com.google.android.location.settings.NlpConsentFooterReceiver" />
+            <item name="com.google.android.gms.fido.fido2.ui.Fido2FullScreenActivity" />
+            <item name="com.google.android.gms.matchstick.contacts.sync.TachystickSyncService" />
+            <item name="com.google.android.gms.car.CarServiceSettingsActivity2" />
+            <item name="com.google.android.gms.romanesco.settings.ContactsRestoreSettingsActivity" />
+            <item name="com.google.android.gms.mobiledataplan.ui.MobileDataPlanDetailActivity" />
+            <item name="com.google.android.gms.udc.ui.UdcConsentActivity" />
+            <item name="com.google.android.gms.growth.notifications.NotificationActionActivity" />
+            <item name="com.google.android.gms.constellation.ui.ConstellationWebSettingsActivity" />
+            <item name="com.google.android.gms.auth.cryptauth.register.ReEnrollmentService" />
+            <item name="com.google.android.gms.matchstick.settings.RegistrationActivity" />
+            <item name="com.google.android.gms.auth.api.accounttransfer.PurgeAccountTransferDataService" />
+            <item name="com.google.android.gms.signin.activity.ConsentActivity" />
+            <item name="com.google.android.gms.auth.proximity.phonehub.PhoneHubService" />
+            <item name="com.google.android.gms.wallet.service.WalletGcmTaskService" />
+            <item name="com.google.android.gms.wallet.redirect.StartAndroidAppRedirectProxyActivity" />
+            <item name="com.google.android.gms.herrevad.services.CaptivePortalReportService" />
+            <item name="com.google.android.gms.nearby.exposurenotification.settings.SettingsActivity" />
+            <item name="com.google.android.gms.googlehelp.gcm.InvalidateGcmTokenGcmTaskService" />
+            <item name="com.google.android.gms.car.diagnostics.CrashReporterService2" />
+            <item name="com.google.android.gms.subscribedfeeds.GmsSubscribedFeedsProvider" />
+            <item name="com.google.android.gms.auth.api.phone.ui.AutofillSettingsActivity" />
+            <item name="com.google.android.gms.lockbox.LockboxService" />
+            <item name="com.google.android.gms.backup.component.D2dMigrateHelperService" />
+            <item name="com.google.android.gms.backup.component.D2dTransportService" />
+            <item name="com.google.android.gms.growth.upgradeparty.activity.MainActivity" />
+            <item name="com.google.android.gms.growth.ui.GrowthDebugActivity" />
+            <item name="com.google.android.gms.auth.managed.ui.SetupWorkProfileActivity" />
+            <item name="com.google.android.gms.family.v2.manage.DeleteMemberActivity" />
+            <item name="com.google.android.gms.auth.uiflows.consent.BrowserConsentActivity" />
+            <item name="com.google.android.gms.thunderbird.settings.ThunderbirdSettingsContentProvider" />
+            <item name="com.google.android.gms.app.settings.SettingsSubPageActivity" />
+            <item name="com.google.android.gms.easysignin.EasySignInActivity" />
+            <item name="com.google.android.gms.auth.uiflows.removeaccount.GetAccountRemovalAllowedActivity" />
+            <item name="com.google.android.gms.auth.uiflows.factoryreset.PreFactoryResetActivity" />
+            <item name="com.google.android.gms.app.net.NetworkUsageActivity" />
+            <item name="com.google.android.gms.matchstick.data.LighterContentProvider" />
+            <item name="com.google.android.gms.constellation.ui.ConstellationSettingsActivity" />
+            <item name="com.google.android.gms.wallet.usermanagement.UserManagementActivity" />
+            <item name="com.google.android.gms.security.settings.AdmSettingsActivity" />
+            <item name="com.google.android.gms.nearby.discovery.fastpair.CompanionAppInstallActivity" />
+            <item name="com.google.android.gms.subscribedfeeds.SyncService" />
+            <item name="com.google.android.location.settings.LocationAccuracySettingsActivity" />
+            <item name="com.google.android.gms.mobiledataplan.service.PeriodicUpdaterService" />
+            <item name="com.google.android.gms.growth.ui.webview.GrowthWebViewActivity" />
+            <item name="com.google.android.gms.car.CarService" />
+            <item name="com.google.android.location.settings.DrivingActivity" />
+            <item name="com.google.android.gms.googlehelp.helpactivities.OpenHelpRtcActivity" />
+            <item name="com.google.android.gms.phenotype.service.FlagOverrideReceiver" />
+            <item name="com.google.android.location.settings.ActivityRecognitionModeActivity" />
+            <item name="com.google.android.gms.googlehelp.contact.chat.ChatSupportRequestFormActivity" />
+            <item name="com.google.android.gms.auth.proximity.multidevice.SettingsActivity" />
+            <item name="com.google.android.gms.auth.frp.FreUnlockActivity" />
+            <item name="com.google.android.gms.nearby.exposurenotification.service.ExposureNotificationInternalService" />
+        </enabled-components>
+        <disabled-components>
+            <item name="com.google.android.gms.games.chimera.GamesUploadServiceProxy" />
+            <item name="com.google.android.gms.gass.chimera.SchedulePeriodicTasksService" />
+            <item name="com.google.android.gms.appstate.service.AppStateIntentService" />
+            <item name="com.google.android.gms.appstate.service.AppStateAndroidService" />
+            <item name="com.google.android.gms.netrec.scoring.receiver.ScoreNetworksBroadcastReceiver" />
+            <item name="com.google.android.gms.icing.service.AppIndexingService" />
+            <item name="com.google.android.gms.fitness.wearables.WearableSyncService" />
+            <item name="com.google.android.gms.nearby.sharing.DirectShareService" />
+            <item name="com.google.android.gms.fitness.service.wearable.WearableSyncConnectionService" />
+            <item name="com.google.android.gms.chimera.UiApiServiceNoInstantApps" />
+            <item name="com.google.android.location.drivingmode.DrivingModeSettingsActivity" />
+            <item name="com.google.android.gms.backup.component.BackupOptInActivity" />
+            <item name="com.google.android.gms.fitness.service.config.FitConfigBroker" />
+            <item name="com.google.android.gms.gconnect.ui.ErrorActivity" />
+            <item name="com.google.android.location.places.service.PlaceDetectionAsyncService" />
+            <item name="com.google.android.gms.tapandpay.hce.service.TpHceService" />
+            <item name="com.google.android.gms.cast.service.CastPersistentService" />
+            <item name="com.google.android.gms.droidguard.DroidGuardService" />
+            <item name="com.google.android.gms.ads.identifier.service.AdvertisingIdNotificationService" />
+            <item name="com.google.android.gms.auth.managed.ui.SetNewPasswordActivity" />
+            <item name="com.google.android.location.util.LocationAccuracyInjectorService" />
+            <item name="com.google.android.gms.games.chimera.SnapshotEventServiceProxy" />
+            <item name="com.google.android.gms.ads.config.FlagsReceiver" />
+            <item name="com.google.android.gms.instantapps.service.InstantAppsService" />
+            <item name="com.google.android.location.geocode.GeocodeService" />
+            <item name="com.google.android.gms.nearby.sharing.SharingSliceProvider" />
+            <item name="com.google.android.gms.fitness.service.sessions.FitSessionsBroker" />
+            <item name="com.google.android.gms.trustagent.api.state.TrustAgentStateService" />
+            <item name="com.google.android.gms.pay.notifications.GcmBroadcastReceiver" />
+            <item name="com.google.android.gms.fitness.service.recording.FitRecordingBroker" />
+            <item name="com.google.android.gms.auth.setup.devicesignals.LockScreenService" />
+            <item name="com.google.android.gms.gcm.GcmService" />
+            <item name="com.google.android.gms.chimera.PersistentApiServiceNoInstantApps" />
+            <item name="com.google.android.gms.pay.security.storagekey.service.StorageKeyCacheService" />
+            <item name="com.google.android.gms.nearby.sharing.SettingsActivity" />
+            <item name="com.google.android.gms.auth.proximity.phonehub.PhoneHubNotificationListenerService" />
+            <item name="com.google.android.gms.chimera.PersistentApiService" />
+            <item name="com.google.android.gms.location.geocode.GeocodeService" />
+            <item name="com.google.android.gms.auth.uiflows.addaccount.DmDownloadInstallActivity" />
+            <item name="com.google.android.gms.drive.metadata.sync.syncadapter.MetadataSyncService" />
+            <item name="com.google.android.gms.mdm.services.LockscreenMessageService" />
+            <item name="com.google.android.gms.analytics.service.AnalyticsService" />
+            <item name="com.google.location.nearby.direct.service.NearbyDirectService" />
+            <item name="com.google.android.gms.instantapps.routing.DomainFilterUpdateService" />
+            <item name="com.google.android.gms.chimera.PersistentBoundBrokerService" />
+            <item name="com.google.android.gms.accountsettings.content.SettingsSearchContentProvider" />
+            <item name="com.google.android.location.fused.service.FusedProviderService" />
+            <item name="com.google.android.gms.location.quake.ealert.GcmReceiverService" />
+            <item name="com.google.android.gms.ads.measurement.GmpConversionTrackingBrokerService" />
+            <item name="com.google.android.gms.carsetup.DrivingModeFrxActivity" />
+            <item name="com.google.android.gms.common.systemhealthutils.restart.GmsRestartPersistentService" />
+            <item name="com.google.android.gms.people.sync.focus.ContactsSyncAdapterService" />
+            <item name="com.google.android.gms.carsetup.DrivingModeSettingsActivity" />
+            <item name="com.google.android.gms.telephonyspam.sync.SpamListSyncTaskService" />
+            <item name="com.google.android.gms.pay.notifications.PayNotificationService" />
+            <item name="com.google.android.gms.update.SystemUpdateService" />
+            <item name="com.google.android.location.fused.FusedLocationService" />
+            <item name="com.google.android.gms.fonts.update.UpdateSchedulerService" />
+            <item name="com.google.android.gms.games.chimera.GamesSignInIntentServiceProxy" />
+            <item name="com.google.android.gms.phenotype.service.sync.PhenotypeConfigurator" />
+            <item name="com.google.android.gms.autofill.service.AutofillService" />
+            <item name="com.google.android.gms.gcm.nts.SchedulerService" />
+            <item name="com.google.firebase.auth.api.gms.service.FirebaseAuthService" />
+            <item name="com.google.android.gms.fitness.service.wearable.WearableSyncConfigService" />
+            <item name="com.google.android.gms.fitness.service.sensors.FitSensorsBroker" />
+            <item name="com.google.android.gms.ads.social.GcmSchedulerWakeupService" />
+            <item name="com.google.android.gms.checkin.CheckinService" />
+            <item name="com.google.android.gms.checkin.EventLogService" />
+            <item name="com.google.android.location.reporting.service.UploadGcmTaskService" />
+            <item name="com.google.android.gms.gconnect.ui.SmsEntryActivity" />
+            <item name="com.google.android.gms.games.chimera.GamesSyncServiceNotificationProxy" />
+            <item name="com.google.android.gms.kids.settings.KidsSettingsActivityAlias" />
+            <item name="com.google.android.gms.ads.AdRequestBrokerService" />
+            <item name="com.google.android.gms.fitness.service.wearable.WearableSyncAccountService" />
+            <item name="com.google.android.gms.auth.account.authenticator.WorkAccountAuthenticatorService" />
+            <item name="com.google.android.gms.droidguard.DroidGuardGcmTaskService" />
+            <item name="com.google.android.gms.nearby.sharing.ReceiveSurfaceActivity" />
+            <item name="com.google.android.gms.games.chimera.GamesSystemBroadcastReceiverProxy" />
+            <item name="com.google.android.gms.fitness.service.wearable.WearableSyncMessageService" />
+            <item name="com.google.android.gms.thunderbird.EmergencyPersistentService" />
+            <item name="com.google.android.gms.kids.settings.KidsSettingsActivityAliasSuw" />
+            <item name="com.google.android.gms.fitness.service.ble.FitBleBroker" />
+            <item name="com.google.android.gms.chimera.GmsIntentOperationService" />
+            <item name="com.google.android.gms.chimera.PersistentDirectBootAwareApiService" />
+            <item name="com.google.android.gms.update.SystemUpdateActivity" />
+            <item name="com.google.android.gms.games.chimera.RoomAndroidServiceProxy" />
+            <item name="com.google.android.gms.carsetup.DrivingModeSettingsNoSummaryActivity" />
+            <item name="com.google.android.gms.adsidentity.settings.AdsIdentityPersonalizationActivity" />
+            <item name="com.google.android.gms.chimera.PersistentIntentOperationService" />
+            <item name="com.google.android.location.reporting.service.DispatchingService" />
+            <item name="com.google.android.gms.update.SystemUpdateGcmTaskService" />
+            <item name="com.google.android.gms.locationsharing.service.GcmReceiverService" />
+            <item name="com.google.android.gms.common.config.PhenotypeCheckinService" />
+            <item name="com.google.android.gms.nearby.sharing.ShareSheetActivity" />
+            <item name="com.google.android.gms.location.persistent.LocationPersistentService" />
+            <item name="com.google.android.gms.nearby.discovery.service.DiscoveryService" />
+            <item name="com.google.android.gms.ads.jams.NegotiationService" />
+            <item name="com.google.android.gms.trustagent.GoogleTrustAgentTrustStatusMonitorSetting" />
+            <item name="com.google.android.location.internal.PendingIntentCallbackService" />
+            <item name="com.google.firebase.components.ComponentDiscoveryService" />
+            <item name="com.google.android.gms.matchstick.task.ScheduledTaskService" />
+            <item name="com.google.android.location.reporting.service.ReportingAndroidService" />
+            <item name="com.google.android.location.settings.EAlertSettingsActivity" />
+            <item name="com.google.android.gms.nearby.sharing.SettingsActivityAlias" />
+            <item name="com.google.android.location.places.PlacesTaskService" />
+            <item name="com.google.android.gms.fitness.service.proxy.FitProxyBroker" />
+            <item name="com.google.android.gms.auth.managed.ui.SettingsSecurityDeviceOwnerActivity" />
+            <item name="com.google.android.gms.chimera.UiIntentOperationService" />
+            <item name="com.google.android.gms.adsidentity.settings.AdsIdentitySettingsActivity" />
+            <item name="com.google.android.location.internal.server.GoogleLocationService" />
+            <item name="com.google.android.gms.chimera.GmsIntentOperationService$PersistentTrustedReceiver" />
+            <item name="com.google.android.location.ealert.ux.EAlertSafetyInfoActivity" />
+            <item name="com.google.android.gms.car.CarHomeActivity1" />
+            <item name="com.google.android.gms.car.CarHomeActivity2" />
+            <item name="com.google.android.location.network.NetworkLocationService" />
+            <item name="com.google.android.gms.growth.upgradeparty.scheduler.UpgradePartyTaskService" />
+            <item name="com.google.android.location.internal.GoogleLocationManagerService" />
+            <item name="com.google.android.gms.mdm.services.MdmPhoneWearableListenerService" />
+            <item name="com.google.android.gms.ads.cache.CacheBrokerService" />
+            <item name="com.google.android.gms.nearby.sharing.SetupActivity" />
+            <item name="com.google.android.gms.stats.service.DropBoxEntryAddedService" />
+            <item name="com.google.android.gms.drive.metadata.sync.syncadapter.SyncAdapterService" />
+            <item name="com.google.android.gms.gconnect.ui.ConnectionWizardActivity" />
+            <item name="com.google.android.gms.backup.component.GmsBackupSchedulerService" />
+            <item name="com.google.android.gms.accountsettings.ui.SearchEntryPointActivity" />
+            <item name="com.google.android.gms.stats.PlatformStatsCollectorService" />
+            <item name="com.google.android.gms.auth.proximity.phonehub.NotificationOptInActivity" />
+            <item name="com.google.android.gms.games.chimera.GamesSignInServiceProxy" />
+            <item name="com.google.android.location.settings.EAlertGoogleSettingDebugActivity" />
+            <item name="com.google.android.gms.nearby.sharing.SharingTileService" />
+            <item name="com.google.android.gms.games.chimera.GamesAndroidServiceProxy" />
+            <item name="com.google.android.gms.games.chimera.GamesSyncServiceMainProxy" />
+            <item name="com.google.android.gms.thunderbird.settings.ThunderbirdSettingInjectorService" />
+            <item name="com.google.android.gms.autofill.events.AutofillGcmTaskService" />
+            <item name="com.google.android.gms.fitness.sync.SyncGcmTaskService" />
+            <item name="com.google.android.gms.fitness.service.internal.FitInternalBroker" />
+            <item name="com.google.android.gms.gconnect.ui.ConnectionCompletionActivity" />
+            <item name="com.google.android.gms.nearby.sharing.SharingSyncService" />
+            <item name="com.google.android.gms.auth.uiflows.addaccount.GoogleServicesActivity" />
+            <item name="com.google.android.gms.locationsharing.service.LocationSharingService" />
+            <item name="com.google.android.gms.ocr.CardCaptureActivity" />
+            <item name="com.google.android.gms.backup.component.MmsBackupSchedulerService" />
+            <item name="com.google.android.gms.phenotype.provider.ConfigurationProvider" />
+            <item name="com.google.android.location.settings.DrivingConditionProvider" />
+            <item name="com.google.android.location.reporting.service.ReportingSyncService" />
+            <item name="com.google.android.gms.thunderbird.EmergencyLocationService" />
+            <item name="com.google.android.gms.ocr.SecuredCreditCardOcrActivity" />
+            <item name="com.google.android.location.fused.wearable.GmsWearableListenerService" />
+            <item name="com.google.android.gms.games.chimera.GamesAsyncServiceProxy" />
+            <item name="com.google.android.gms.pay.main.PayActivity" />
+            <item name="com.google.android.location.internal.server.HardwareArProviderService" />
+            <item name="com.google.android.location.wearable.WearableLocationService" />
+            <item name="com.google.android.location.drivingmode.DrivingModeSettingsNoSummaryActivity" />
+            <item name="com.google.android.gms.chimera.container.GmsModuleProvider" />
+            <item name="com.google.android.gms.rcs.binding.RcsBindingPersistentService" />
+            <item name="com.google.android.gms.chimera.GmsApiServiceNoInstantApps" />
+            <item name="com.google.android.gms.appstate.service.AppStateSyncService" />
+            <item name="com.google.android.location.internal.NanoAppUpdaterGcmTaskService" />
+            <item name="com.google.android.gms.gconnect.ui.PhoneNumberTosActivity" />
+            <item name="com.google.android.gms.pay.gcmtask.PayGcmTaskService" />
+            <item name="com.google.android.location.drivingmode.AutoLaunchService" />
+            <item name="com.google.android.gms.wearable.service.WearableService" />
+            <item name="com.google.android.gms.locationsharing.service.LocationSharingSettingInjectorService" />
+            <item name="com.google.android.gms.nearby.discovery.fastpair.slice.FastPairContextualCardProvider" />
+            <item name="com.google.android.gms.fitness.service.goals.FitGoalsBroker" />
+            <item name="com.google.android.gms.gcm.PushMessagingRegistrarProxy" />
+            <item name="com.google.android.gms.fitness.cache.DataUpdateListenerCacheService" />
+            <item name="com.google.android.gms.ocr.GiftCardOcrActivity" />
+            <item name="com.google.android.location.reporting.service.LocationHistoryInjectorService" />
+            <item name="com.google.android.gms.fitness.sync.FitnessSyncAdapterService" />
+            <item name="com.google.android.gms.auth.managed.admin.DeviceAdminReceiver" />
+            <item name="com.google.android.location.service.EAlertSettingInjectorService" />
+            <item name="com.google.android.gms.nearby.sharing.ReceiveSurfaceActivityAlias" />
+            <item name="com.google.android.gms.trustagent.discovery.OnbodyPromotionActivity" />
+            <item name="com.google.android.gms.checkin.CheckinApiService" />
+            <item name="com.google.android.gms.chimera.PersistentInternalBoundBrokerService" />
+            <item name="com.google.android.gms.fitness.sensors.sample.CollectSensorService" />
+            <item name="com.google.android.gms.wearable.service.WearableControlService" />
+            <item name="com.google.android.gms.matchstick.ui.BMMRegistrationActivity" />
+            <item name="com.google.android.gms.ads.identifier.service.AdvertisingIdService" />
+            <item name="com.google.android.location.drivingmode.DrivingModeFrxActivity" />
+            <item name="com.google.android.gms.fitness.service.history.FitHistoryBroker" />
+            <item name="com.google.android.gms.ipa.base.IpaGcmTaskService" />
+            <item name="com.google.android.gms.learning.training.background.TrainingGcmTaskService" />
+            <item name="com.google.android.gms.chimera.PersistentInternalApiService" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.google.android.gsf" ceDataInode="752702" scaleRatio="None">
+        <disabled-components>
+            <item name="com.google.android.gsf.loginservice.MigrateToAccountManagerBroadcastReceiver" />
+            <item name="com.google.android.gsf.subscribedfeeds.SubscribedFeedsSyncAdapterService" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.google.android.ims" ceDataInode="752705" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None">
+        <disabled-components>
+            <item name="com.google.android.ims.receivers.BootCompletedReceiver" />
+            <item name="com.google.android.ims.receivers.RcsAutoStartReceiver" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.google.android.tag" ceDataInode="752708" scaleRatio="None" />
+    <pkg name="com.google.android.tts" ceDataInode="752711" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None" />
+    <pkg name="com.evenwell.CPClient.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.android.calllogbackup" ceDataInode="760372" scaleRatio="None" />
+    <pkg name="com.google.android.partnersetup" ceDataInode="760375" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None">
+        <enabled-components>
+            <item name="com.google.android.partnersetup.PhoneStateReceiver" />
+        </enabled-components>
+        <disabled-components>
+            <item name="com.google.android.partnersetup.RlzPingBroadcastReceiver" />
+            <item name="com.google.android.partnersetup.GooglePartnerSetup" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.evenwell.bboxsbox.app" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.evenwell.CPClient" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="rikka.appops" ceDataInode="768577" scaleRatio="18:9">
+        <disabled-components>
+            <item name="rikka.appops.receiver.BootCompletedReceiver" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.android.proxyhandler" ceDataInode="752272" scaleRatio="None" />
+    <pkg name="com.evenwell.DeviceMonitorControl.data.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.evenwell.music.overlay.d.base.s600ww" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.android.partnerbrowsercustomizations" ceDataInode="760390" scaleRatio="None" />
+    <pkg name="com.google.android.feedback" ceDataInode="760393" scaleRatio="None" />
+    <pkg name="com.topjohnwu.magisk" ceDataInode="768567" scaleRatio="18:9">
+        <enabled-components>
+            <item name="androidx.work.impl.background.systemjob.SystemJobService" />
+        </enabled-components>
+    </pkg>
+    <pkg name="com.google.android.printservice.recommendation" ceDataInode="760396" scaleRatio="None" />
+    <pkg name="com.google.android.apps.photos" inst="false" stopped="true" nl="true" scaleRatio="None" domainVerificationStatus="2" />
+    <pkg name="com.android.carrierconfig.btl" ceDataInode="760402" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None" />
+    <pkg name="com.google.android.calendar" inst="false" stopped="true" nl="true" scaleRatio="None" domainVerificationStatus="2" />
+    <pkg name="com.android.managedprovisioning" ceDataInode="760408" scaleRatio="None" />
+    <pkg name="com.mediatek.calendarimporter" ceDataInode="760411" enabled="3" enabledCaller="shell:1000" scaleRatio="None" />
+    <pkg name="com.tencent.soter.soterserver" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="android.framework.base" ceDataInode="760417" stopped="true" scaleRatio="None" />
+    <pkg name="com.mixplorer" ceDataInode="784897" scaleRatio="18:9">
+        <disabled-components>
+            <item name="com.mixplorer.providers.DocProvider" />
+            <item name="com.mixplorer.BroadcastReceiver" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.simplemobiletools.gallery.pro" ceDataInode="752345" scaleRatio="18:9">
+        <disabled-components>
+            <item name="com.simplemobiletools.gallery.pro.receivers.BootCompletedReceiver" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.evenwell.customerfeedback.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.lineageport.trebuchet" ceDataInode="768593" scaleRatio="18:9" />
+    <pkg name="com.hmdglobal.camera2.overlay.base" ceDataInode="760423" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None" />
+    <pkg name="com.android.calendar.overlay.base" ceDataInode="760426" stopped="true" scaleRatio="None" />
+    <pkg name="com.android.providers.partnerbookmarks" ceDataInode="760429" stopped="true" scaleRatio="None" />
+    <pkg name="com.android.smspush" ceDataInode="760432" scaleRatio="None">
+        <disabled-components>
+            <item name="com.android.smspush.WapPushManager" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.trustonic.teeservice" ceDataInode="752275" stopped="true" scaleRatio="None" />
+    <pkg name="com.android.wallpaper.livepicker" ceDataInode="760435" stopped="true" scaleRatio="None" />
+    <pkg name="com.evenwell.dataspeedindicator.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.evenwell.CPClient.overlay.d.base.s600ww" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.evenwell.powersaving.g3" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.evenwell.SetupWizard" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.evenwell.bokeheditor" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.android.contacts.overlay.d.base.s600ww" ceDataInode="760454" stopped="true" scaleRatio="None" />
+    <pkg name="com.evenwell.batteryprotect.overlay.d.base.s600ww" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.google.android.gms.policy_sidecar_aps" ceDataInode="760460" stopped="true" scaleRatio="None" />
+    <pkg name="com.android.launcher3.overlay.d.base.s600ww" ceDataInode="760463" stopped="true" scaleRatio="None" />
+    <pkg name="com.google.android.backuptransport" ceDataInode="760466" stopped="true" scaleRatio="None" />
+    <pkg name="com.evenwell.DeviceMonitorControl" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.evenwell.AprUploadService.data.overlay.base.s600ww" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.evenwell.custmanager" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="eu.thedarken.sdm" ceDataInode="761363" scaleRatio="18:9" install-reason="4">
+        <enabled-components>
+            <item name="eu.thedarken.sdm.oneclick.widget.QuickAccessWidgetProvider" />
+        </enabled-components>
+    </pkg>
+    <pkg name="com.android.storagemanager" ceDataInode="760478" stopped="true" scaleRatio="None" />
+    <pkg name="com.android.bookmarkprovider" ceDataInode="760481" stopped="true" scaleRatio="None" />
+    <pkg name="com.android.settings" ceDataInode="752281" scaleRatio="None">
+        <enabled-components>
+            <item name="com.android.settings.Settings$MyDeviceInfoActivity" />
+            <item name="com.android.settings.Settings$ConnectedDeviceDashboardActivity" />
+            <item name="com.android.settings.Settings$PowerUsageSummaryActivity" />
+            <item name="com.android.settings.Settings$SimSettingsActivity" />
+            <item name="com.android.settings.Settings$NetworkDashboardActivity" />
+            <item name="com.android.settings.Settings$WifiDisplaySettingsActivity" />
+            <item name="com.android.settings.Settings$DateTimeSettingsActivity" />
+            <item name="com.android.settings.Settings$BluetoothSettingsActivity" />
+            <item name="com.android.settings.Settings$DevelopmentSettingsDashboardActivity" />
+            <item name="com.android.settings.backup.BackupSettingsActivity" />
+            <item name="com.android.settings.Settings$WifiSettingsActivity" />
+            <item name="com.android.settings.Settings$AccountDashboardActivity" />
+            <item name="com.android.settings.Settings$SecurityDashboardActivity" />
+            <item name="com.android.settings.WebViewImplementation" />
+            <item name="com.android.settings.Settings$UserSettingsActivity" />
+            <item name="com.android.settings.Settings$AdvancedAppsActivity" />
+            <item name="com.android.settings.Settings$DataUsageSummaryActivity" />
+        </enabled-components>
+        <disabled-components>
+            <item name="com.android.settings.Settings$DeviceInfoSettingsActivity" />
+            <item name="com.android.settings.CryptKeeper" />
+            <item name="com.android.settings.SetupRedactionInterstitial" />
+            <item name="com.android.settings.Settings$DataUsageSummaryLegacyActivity" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.evenwell.pushagent" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.evenwell.SetupWizard.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.evenwell.bokeheditor.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.franco.servicely" ceDataInode="768598" scaleRatio="None" />
+    <pkg name="com.hmdglobal.support" ceDataInode="760493" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None" />
+    <pkg name="com.android.stk.base" ceDataInode="760496" stopped="true" scaleRatio="None" />
+    <pkg name="com.google.android.apps.turbo" ceDataInode="760499" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None">
+        <disabled-components>
+            <item name="com.google.android.libraries.smartbattery.appusage.library.BootReceiver" />
+            <item name="com.google.android.libraries.smartbattery.brightness.library.BootReceiver" />
+            <item name="com.google.android.apps.turbo.nudges.phenotype.PhenotypeChangedReceiver" />
+            <item name="com.google.android.apps.turbo.nudges.battery.BatteryChangedReceiver" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.evenwell.gallerymanagerservice.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.android.cts.ctsshim" ceDataInode="760505" stopped="true" scaleRatio="None" />
+    <pkg name="com.evenwell.DbgCfgTool.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.android.vpndialogs" ceDataInode="760511" stopped="true" scaleRatio="None" />
+    <pkg name="com.google.android.apps.wallpaper" ceDataInode="760514" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None" />
+    <pkg name="com.android.phone" ceDataInode="752287" scaleRatio="None" />
+    <pkg name="com.android.shell" ceDataInode="752293" scaleRatio="None">
+        <enabled-components>
+            <item name="com.android.shell.BugreportStorageProvider" />
+        </enabled-components>
+    </pkg>
+    <pkg name="com.android.wallpaperbackup" ceDataInode="760517" stopped="true" scaleRatio="None" />
+    <pkg name="com.android.providers.blockednumber" ceDataInode="760523" scaleRatio="None" />
+    <pkg name="com.evenwell.dataagent" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.hmdglobal.camera2.overlay.d.base.s600ww" ceDataInode="760529" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None" />
+    <pkg name="com.android.providers.userdictionary" ceDataInode="760532" scaleRatio="None" />
+    <pkg name="com.evenwell.SetupWizard.overlay.d.base.s600ww" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.evenwell.powersaving.g3.overlay.d.base.s600ww" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.evenwell.fmradio" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.android.emergency" ceDataInode="760547" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None" />
+    <pkg name="com.hmdglobal.datago.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.evenwell.batteryprotect.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.android.mms.overlay.d.base.s600ww" ceDataInode="760556" stopped="true" scaleRatio="None" />
+    <pkg name="com.android.location.fused" ceDataInode="752299" scaleRatio="None">
+        <disabled-components>
+            <item name="com.android.location.fused.FusedLocationService" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.android.systemui" ceDataInode="752305" scaleRatio="None">
+        <disabled-components>
+            <item name="com.android.systemui.tuner.TunerActivity" />
+            <item name="com.android.systemui.fih.notch.statusbarsettings.NotchTunerActivity" />
+            <item name="com.android.systemui.keyguard.glance.GlanceSettingsActivity" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.evenwell.gallery.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.android.bluetoothmidiservice" ceDataInode="760562" stopped="true" scaleRatio="None" />
+    <pkg name="com.evenwell.fmradio.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.android.providers.settings.overlay.base" ceDataInode="760568" stopped="true" scaleRatio="None" />
+    <pkg name="com.android.traceur" ceDataInode="760571" scaleRatio="None" />
+    <pkg name="com.evenwell.retaildemoapp" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.evenwell.powersaving.g3.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.google.android.apps.magazines" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.android.bluetooth" ceDataInode="760586" stopped="true" scaleRatio="None" />
+    <pkg name="it.msec.dukto" ceDataInode="768582" scaleRatio="16:9" />
+    <pkg name="io.github.forkmaintainers.iceraven" ceDataInode="769424" scaleRatio="18:9">
+        <enabled-components>
+            <item name="androidx.work.impl.background.systemjob.SystemJobService" />
+        </enabled-components>
+        <disabled-components>
+            <item name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy" />
+            <item name="androidx.work.impl.background.systemalarm.RescheduleReceiver" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.evenwell.dataagent.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.android.providers.contacts" ceDataInode="752308" scaleRatio="None" />
+    <pkg name="com.evenwell.mappartner" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.android.providers.settings.btl.s600ww.overlay" ceDataInode="760595" stopped="true" scaleRatio="None" />
+    <pkg name="com.android.captiveportallogin" ceDataInode="760598" scaleRatio="None" />
+    <pkg name="rkr.simplekeyboard.inputmethod" ceDataInode="753384" scaleRatio="18:9" />
+    <pkg name="com.evenwell.pushagent.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.mediatek.carrierexpress" ceDataInode="752311" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None" />
+    <pkg name="com.hmdglobal.appstore.overlay.base" ceDataInode="760604" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None" />
+    <pkg name="com.evenwell.weatherservice.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.google.android.inputmethod.latin" ceDataInode="752740" stopped="true" enabled="3" enabledCaller="shell:1000" scaleRatio="None">
+        <disabled-components>
+            <item name="com.google.android.apps.inputmethod.libs.framework.core.LauncherActivity" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.evenwell.managedprovisioning.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <pkg name="com.google.android.apps.restore" ceDataInode="760613" stopped="true" scaleRatio="None">
+        <disabled-components>
+            <item name="com.google.android.apps.pixelmigrate.util.SetupWizardLifecycleReceiver" />
+            <item name="com.google.android.apps.pixelmigrate.component.NotificationConsolidatorService" />
+        </disabled-components>
+    </pkg>
+    <pkg name="com.evenwell.autoregistration.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
+    <preferred-activities>
+        <item name="com.google.android.packageinstaller/com.android.packageinstaller.InstallStart" match="600000" always="true" set="3">
+            <set name="com.google.android.packageinstaller/com.android.packageinstaller.InstallStart" />
+            <set name="me.zhanghai.android.files/.filelist.FileListActivity" />
+            <set name="com.mixplorer/.activities.ExploreActivity" />
+            <filter>
+                <action name="android.intent.action.VIEW" />
+                <cat name="android.intent.category.DEFAULT" />
+                <type name="application/vnd.android.package-archive" />
+            </filter>
+        </item>
+        <item name="com.kiwibrowser.browser/com.google.android.apps.chrome.IntentDispatcher" match="200000" always="false" set="0">
+            <filter>
+                <action name="android.intent.action.VIEW" />
+                <cat name="android.intent.category.DEFAULT" />
+                <scheme name="http" />
+            </filter>
+        </item>
+        <item name="com.moez.QKSMS/.feature.compose.ComposeActivity" match="200000" always="true" set="1">
+            <set name="com.moez.QKSMS/.feature.compose.ComposeActivity" />
+            <filter>
+                <action name="android.intent.action.SENDTO" />
+                <cat name="android.intent.category.DEFAULT" />
+                <scheme name="mmsto" />
+            </filter>
+        </item>
+        <item name="com.kiwibrowser.browser/com.google.android.apps.chrome.IntentDispatcher" match="500000" always="false" set="0">
+            <filter>
+                <action name="android.intent.action.VIEW" />
+                <cat name="android.intent.category.DEFAULT" />
+                <scheme name="https" />
+            </filter>
+        </item>
+        <item name="com.aurora.adroid/.ui.details.DetailsActivity" match="300000" always="false" set="0">
+            <filter>
+                <action name="android.intent.action.VIEW" />
+                <cat name="android.intent.category.DEFAULT" />
+                <scheme name="https" />
+                <auth host="f-droid.org" />
+            </filter>
+        </item>
+        <item name="com.moez.QKSMS/.feature.compose.ComposeActivity" match="200000" always="true" set="1">
+            <set name="com.moez.QKSMS/.feature.compose.ComposeActivity" />
+            <filter>
+                <action name="android.intent.action.SENDTO" />
+                <cat name="android.intent.category.DEFAULT" />
+                <scheme name="mms" />
+            </filter>
+        </item>
+        <item name="com.mixplorer/.activities.TextEditorActivity" match="600000" always="false" set="0">
+            <filter>
+                <action name="android.intent.action.VIEW" />
+                <cat name="android.intent.category.DEFAULT" />
+                <type name="text/xml" />
+            </filter>
+        </item>
+        <item name="com.moez.QKSMS/.feature.compose.ComposeActivity" match="200000" always="true" set="1">
+            <set name="com.moez.QKSMS/.feature.compose.ComposeActivity" />
+            <filter>
+                <action name="android.intent.action.SENDTO" />
+                <cat name="android.intent.category.DEFAULT" />
+                <scheme name="smsto" />
+            </filter>
+        </item>
+        <item name="com.android.vending/com.google.android.finsky.activities.MainActivity" match="500000" always="false" set="0">
+            <filter>
+                <action name="android.intent.action.VIEW" />
+                <cat name="android.intent.category.BROWSABLE" />
+                <cat name="android.intent.category.DEFAULT" />
+                <scheme name="https" />
+                <auth host="play.google.com" />
+                <path prefix="/store" />
+            </filter>
+        </item>
+        <item name="com.kiwibrowser.browser/com.google.android.apps.chrome.IntentDispatcher" match="600000" always="false" set="0">
+            <filter>
+                <action name="android.intent.action.VIEW" />
+                <cat name="android.intent.category.DEFAULT" />
+                <type name="*/*" />
+            </filter>
+        </item>
+        <item name="com.kiwibrowser.browser/com.google.android.apps.chrome.IntentDispatcher" match="500000" always="false" set="0">
+            <filter>
+                <action name="android.intent.action.VIEW" />
+                <cat name="android.intent.category.DEFAULT" />
+                <scheme name="file" />
+                <auth host="*" />
+                <path sglob="/.*.mhtml" />
+            </filter>
+        </item>
+        <item name="com.lineageport.trebuchet/com.android.launcher3.searchlauncher.SearchLauncher" match="100000" always="true" set="2">
+            <set name="com.lineageport.trebuchet/com.android.launcher3.searchlauncher.SearchLauncher" />
+            <set name="com.android.settings/.FallbackHome" />
+            <filter>
+                <action name="android.intent.action.MAIN" />
+                <cat name="android.intent.category.HOME" />
+                <cat name="android.intent.category.DEFAULT" />
+            </filter>
+        </item>
+        <item name="com.moez.QKSMS/.feature.compose.ComposeActivity" match="200000" always="true" set="1">
+            <set name="com.moez.QKSMS/.feature.compose.ComposeActivity" />
+            <filter>
+                <action name="android.intent.action.SENDTO" />
+                <cat name="android.intent.category.DEFAULT" />
+                <scheme name="sms" />
+            </filter>
+        </item>
+        <item name="com.kiwibrowser.browser/com.google.android.apps.chrome.IntentDispatcher" match="200000" always="false" set="0">
+            <filter>
+                <action name="android.intent.action.VIEW" />
+                <cat name="android.intent.category.DEFAULT" />
+                <scheme name="https" />
+            </filter>
+        </item>
+    </preferred-activities>
+    <persistent-preferred-activities />
+    <crossProfile-intent-filters />
+    <default-apps>
+        <default-dialer packageName="com.android.dialer" />
+    </default-apps>
+</package-restrictions>
