@@ -11,3 +11,6 @@ things to look for in the source code
 DeviceIdleController.java
 public static final String BATTERY_SAVER_CONSTANTS = "battery_saver_constants"
 BatterySaverPolicy
+
+You may add this to your macrodroid screen off
+dumpsys deviceidle force-idle deep
