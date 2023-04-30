@@ -1,5 +1,11 @@
+this may help you get the channel name
+
+dumpsys notification
+
 Edit /data/system/notification_policy.xml
+
 the path may change in newer version of android
+
 importance="3" to  importance="0"
 and added locked="4"
 
