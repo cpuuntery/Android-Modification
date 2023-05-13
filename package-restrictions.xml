@@ -466,6 +466,7 @@
             <item name="com.google.android.gms.security.recaptcha.RecaptchaActivity" />
             <item name="com.google.android.gms.thunderbird.settings.ThunderbirdSettingsActivity" />
             <item name="com.google.android.gms.car.StopperActivity" />
+            <item name="com.google.android.gms.phenotype.service.sync.PhenotypeConfigurator" />
             <item name="com.google.android.gms.udc.ui.AuthenticatingWebViewActivity" />
             <item name="com.google.android.gms.matchstick.data.DatabaseProvider" />
             <item name="com.google.android.gms.autofill.ui.AutofillSettingsActivity" />
@@ -545,6 +546,7 @@
             <item name="com.google.android.gms.nearby.discovery.ui.NotificationSettingsActivity" />
             <item name="com.google.android.gms.wallet.timelineview.TimeLineViewActivity" />
             <item name="com.google.android.gms.nearby.discovery.fastpair.slice.FastPairSliceProvider" />
+            <item name="com.google.android.gms.phenotype.provider.ConfigurationProvider" />
             <item name="com.google.android.gms.accountsettings.ui.ZeroPartyEntryPointActivity" />
             <item name="com.google.android.gms.chromesync.sync.GcmBroadcastReceiver" />
             <item name="com.google.android.gms.carsetup.DiscoverAaSettingsActivity" />
@@ -675,7 +677,6 @@
             <item name="com.google.android.location.fused.FusedLocationService" />
             <item name="com.google.android.gms.fonts.update.UpdateSchedulerService" />
             <item name="com.google.android.gms.games.chimera.GamesSignInIntentServiceProxy" />
-            <item name="com.google.android.gms.phenotype.service.sync.PhenotypeConfigurator" />
             <item name="com.google.android.gms.autofill.service.AutofillService" />
             <item name="com.google.android.gms.gcm.nts.SchedulerService" />
             <item name="com.google.firebase.auth.api.gms.service.FirebaseAuthService" />
@@ -758,7 +759,6 @@
             <item name="com.google.android.gms.locationsharing.service.LocationSharingService" />
             <item name="com.google.android.gms.ocr.CardCaptureActivity" />
             <item name="com.google.android.gms.backup.component.MmsBackupSchedulerService" />
-            <item name="com.google.android.gms.phenotype.provider.ConfigurationProvider" />
             <item name="com.google.android.location.settings.DrivingConditionProvider" />
             <item name="com.google.android.location.reporting.service.ReportingSyncService" />
             <item name="com.google.android.gms.thunderbird.EmergencyLocationService" />
@@ -1015,36 +1015,11 @@
     </pkg>
     <pkg name="com.evenwell.autoregistration.overlay.base" inst="false" stopped="true" nl="true" scaleRatio="None" />
     <preferred-activities>
-        <item name="com.google.android.packageinstaller/com.android.packageinstaller.InstallStart" match="600000" always="true" set="3">
-            <set name="com.google.android.packageinstaller/com.android.packageinstaller.InstallStart" />
-            <set name="me.zhanghai.android.files/.filelist.FileListActivity" />
-            <set name="com.mixplorer/.activities.ExploreActivity" />
+        <item name="com.kiwibrowser.browser/com.google.android.apps.chrome.IntentDispatcher" match="600000" always="false" set="0">
             <filter>
                 <action name="android.intent.action.VIEW" />
                 <cat name="android.intent.category.DEFAULT" />
-                <type name="application/vnd.android.package-archive" />
-            </filter>
-        </item>
-        <item name="com.kiwibrowser.browser/com.google.android.apps.chrome.IntentDispatcher" match="200000" always="false" set="0">
-            <filter>
-                <action name="android.intent.action.VIEW" />
-                <cat name="android.intent.category.DEFAULT" />
-                <scheme name="http" />
-            </filter>
-        </item>
-        <item name="com.moez.QKSMS/.feature.compose.ComposeActivity" match="200000" always="true" set="1">
-            <set name="com.moez.QKSMS/.feature.compose.ComposeActivity" />
-            <filter>
-                <action name="android.intent.action.SENDTO" />
-                <cat name="android.intent.category.DEFAULT" />
-                <scheme name="mmsto" />
-            </filter>
-        </item>
-        <item name="com.kiwibrowser.browser/com.google.android.apps.chrome.IntentDispatcher" match="500000" always="false" set="0">
-            <filter>
-                <action name="android.intent.action.VIEW" />
-                <cat name="android.intent.category.DEFAULT" />
-                <scheme name="https" />
+                <type name="*/*" />
             </filter>
         </item>
         <item name="com.aurora.adroid/.ui.details.DetailsActivity" match="300000" always="false" set="0">
@@ -1060,14 +1035,7 @@
             <filter>
                 <action name="android.intent.action.SENDTO" />
                 <cat name="android.intent.category.DEFAULT" />
-                <scheme name="mms" />
-            </filter>
-        </item>
-        <item name="com.mixplorer/.activities.TextEditorActivity" match="600000" always="false" set="0">
-            <filter>
-                <action name="android.intent.action.VIEW" />
-                <cat name="android.intent.category.DEFAULT" />
-                <type name="text/xml" />
+                <scheme name="sms" />
             </filter>
         </item>
         <item name="com.moez.QKSMS/.feature.compose.ComposeActivity" match="200000" always="true" set="1">
@@ -1075,7 +1043,7 @@
             <filter>
                 <action name="android.intent.action.SENDTO" />
                 <cat name="android.intent.category.DEFAULT" />
-                <scheme name="smsto" />
+                <scheme name="mmsto" />
             </filter>
         </item>
         <item name="com.android.vending/com.google.android.finsky.activities.MainActivity" match="500000" always="false" set="0">
@@ -1088,20 +1056,11 @@
                 <path prefix="/store" />
             </filter>
         </item>
-        <item name="com.kiwibrowser.browser/com.google.android.apps.chrome.IntentDispatcher" match="600000" always="false" set="0">
+        <item name="com.mixplorer/.activities.TextEditorActivity" match="600000" always="false" set="0">
             <filter>
                 <action name="android.intent.action.VIEW" />
                 <cat name="android.intent.category.DEFAULT" />
-                <type name="*/*" />
-            </filter>
-        </item>
-        <item name="com.kiwibrowser.browser/com.google.android.apps.chrome.IntentDispatcher" match="500000" always="false" set="0">
-            <filter>
-                <action name="android.intent.action.VIEW" />
-                <cat name="android.intent.category.DEFAULT" />
-                <scheme name="file" />
-                <auth host="*" />
-                <path sglob="/.*.mhtml" />
+                <type name="text/xml" />
             </filter>
         </item>
         <item name="com.lineageport.trebuchet/com.android.launcher3.searchlauncher.SearchLauncher" match="100000" always="true" set="2">
@@ -1113,12 +1072,29 @@
                 <cat name="android.intent.category.DEFAULT" />
             </filter>
         </item>
+        <item name="com.kiwibrowser.browser/com.google.android.apps.chrome.IntentDispatcher" match="500000" always="false" set="0">
+            <filter>
+                <action name="android.intent.action.VIEW" />
+                <cat name="android.intent.category.DEFAULT" />
+                <scheme name="https" />
+            </filter>
+        </item>
         <item name="com.moez.QKSMS/.feature.compose.ComposeActivity" match="200000" always="true" set="1">
             <set name="com.moez.QKSMS/.feature.compose.ComposeActivity" />
             <filter>
                 <action name="android.intent.action.SENDTO" />
                 <cat name="android.intent.category.DEFAULT" />
-                <scheme name="sms" />
+                <scheme name="mms" />
+            </filter>
+        </item>
+        <item name="com.google.android.packageinstaller/com.android.packageinstaller.InstallStart" match="600000" always="true" set="3">
+            <set name="com.google.android.packageinstaller/com.android.packageinstaller.InstallStart" />
+            <set name="me.zhanghai.android.files/.filelist.FileListActivity" />
+            <set name="com.mixplorer/.activities.ExploreActivity" />
+            <filter>
+                <action name="android.intent.action.VIEW" />
+                <cat name="android.intent.category.DEFAULT" />
+                <type name="application/vnd.android.package-archive" />
             </filter>
         </item>
         <item name="com.kiwibrowser.browser/com.google.android.apps.chrome.IntentDispatcher" match="200000" always="false" set="0">
@@ -1126,6 +1102,30 @@
                 <action name="android.intent.action.VIEW" />
                 <cat name="android.intent.category.DEFAULT" />
                 <scheme name="https" />
+            </filter>
+        </item>
+        <item name="com.kiwibrowser.browser/com.google.android.apps.chrome.IntentDispatcher" match="500000" always="false" set="0">
+            <filter>
+                <action name="android.intent.action.VIEW" />
+                <cat name="android.intent.category.DEFAULT" />
+                <scheme name="file" />
+                <auth host="*" />
+                <path sglob="/.*.mhtml" />
+            </filter>
+        </item>
+        <item name="com.moez.QKSMS/.feature.compose.ComposeActivity" match="200000" always="true" set="1">
+            <set name="com.moez.QKSMS/.feature.compose.ComposeActivity" />
+            <filter>
+                <action name="android.intent.action.SENDTO" />
+                <cat name="android.intent.category.DEFAULT" />
+                <scheme name="smsto" />
+            </filter>
+        </item>
+        <item name="com.kiwibrowser.browser/com.google.android.apps.chrome.IntentDispatcher" match="200000" always="false" set="0">
+            <filter>
+                <action name="android.intent.action.VIEW" />
+                <cat name="android.intent.category.DEFAULT" />
+                <scheme name="http" />
             </filter>
         </item>
     </preferred-activities>
