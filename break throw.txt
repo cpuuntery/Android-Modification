@@ -34,5 +34,10 @@ adb shell settings put global battery_saver_constants vibration_disabled=true,fo
 
 adb shell settings put global anomaly_detection_constants anomaly_detection_enabled=true,wakelock_enabled=false,wakeup_alarm_enabled=false
 
+pm disable --user 0 com.google.android.gms/com.google.android.gms.update.SystemUpdateActivity
+
+
+
+
 pm disable --user 0 com.google.android.gms/.phenotype.service.sync.PhenotypeConfigurator
 
