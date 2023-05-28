@@ -30,12 +30,47 @@ Chattiest
 curRaw=
 CchEmty
 
+partition and event timestamp and cpu freq
+*** /sys/block/
+ dev="
+gcf,
+
+\d+\/\d+\/20.*? 
+
+
 Extract a list of every app installed on the device
 
-(?<=Package \[).*?(?=\] )
+Package .*] 
+Package Names:
 
-  
+user installed apps
+  +codePath=/data/app/.*$
+after it
+(?<===\/).*?(?=-)
+
+
+installed at some point of time
+\(packageName=.*?,installerState
+
+DumpSysContentProvider}  to (packageName
+
+  timeRange="
+
+
+others not so much intersting
+sdhci
+SCSI
+mmc0
+
+android 11+
+UsageStatsDatabase: to   Database Summary:
+
+maybe it is useful
+name=DOWNSCALED;
+
 
 Package idle stats: very good maybe every single app. that ran at one point of time on the device
-(?<=    package=).*?(?= lastUsedElapsed)
+App Standby States:
+DUMP OF SERVICE usagestats:
+CHECKIN USAGESTATS
 
