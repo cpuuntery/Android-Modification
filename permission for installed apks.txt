@@ -1,0 +1,24 @@
+change  com.arlosoft.macrodroid
+
+
+pm grant com.arlosoft.macrodroid android.permission.WRITE_EXTERNAL_STORAGE
+pm grant com.arlosoft.macrodroid android.permission.BIND_ACCESSIBILITY_SERVICE
+cmd appops set com.arlosoft.macrodroid BIND_ACCESSIBILITY_SERVICE allow
+pm grant com.arlosoft.macrodroid android.permission.ACCESS_NOTIFICATIONS
+cmd appops set com.arlosoft.macrodroid ACCESS_NOTIFICATIONS allow
+pm grant com.arlosoft.macrodroid android.permission.BIND_DEVICE_ADMIN
+pm grant com.arlosoft.macrodroid android.permission.SYSTEM_ALERT_WINDOW
+cmd appops set com.arlosoft.macrodroid SYSTEM_ALERT_WINDOW allow
+cmd appops set com.arlosoft.macrodroid GET_USAGE_STATS allow
+pm grant com.arlosoft.macrodroid android.permission.SCHEDULE_EXACT_ALARM
+cmd appops set com.arlosoft.macrodroid SCHEDULE_EXACT_ALARM allow
+pm grant com.arlosoft.macrodroid android.permission.MANAGE_EXTERNAL_STORAGE
+cmd appops set com.arlosoft.macrodroid MANAGE_EXTERNAL_STORAGE allow
+pm grant com.arlosoft.macrodroid android.permission.REQUEST_INSTALL_PACKAGES
+cmd appops set com.arlosoft.macrodroid REQUEST_INSTALL_PACKAGES allow
+
+
+or
+
+ 
+adb install -g app.apk
