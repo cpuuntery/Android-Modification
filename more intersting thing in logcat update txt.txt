@@ -1,0 +1,34 @@
+#app_start_up after boot 
+
+am_proc_start
+
+PROCESS TIMES
+
+
+#oom value
+
+curRaw
+
+#intersting 
+
+pms = package manger dervice
+ams = activity manger service
+
+boot_progress_pms
+
+boot_progress_pms_start
+
+boot_progress_pms_ready
+
+boot_progress_ams
+
+
+boot_progress_enable_screen
+
+sf_stop_bootanim
+
+wm_boot_animation_done
+
+framework_locked_boot_completed
+
+framework_boot_completed

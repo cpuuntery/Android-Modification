@@ -1,0 +1,21 @@
+pkg="io.github.forkmaintainers.iceraven"
+permission="android.permission.INTERNET"
+
+# Use sed with variables to remove permission from the specific package
+sed -i -E "/.*${pkg}.*/,/.*${permission}.*/ s/.*${permission}.*/\n/" /data/system/packages.xml
+
+
+pkg="io.github.forkmaintainers.iceraven"
+permission="android.permission.INTERNET"
+
+# Use sed with variables to add a permission to the specific package
+sed -i -E "/.*${pkg}.*/,/.*<perms>.*/ s/<perms>/<perms>\n            <item name=\"${permission}\" granted=\"true\" flags=\"0\" \/>/" /data/system/packages.xml
+
+
+
+pkg="io.github.forkmaintainers.iceraven"
+permission="android.permission.INTERNET"
+granted="true"  # Set to "true" or "false" based on your requirement
+
+# Use sed with variables to add the permission
+sed -i -E "/.*${pkg}.*/,/.*<perms>.*/ s/<perms>/<perms>\n            <item name=\"${permission}\" granted=\"${granted}\" flags=\"0\" \/>/" /data/system/packages.xml

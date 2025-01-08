@@ -1,0 +1,4 @@
+cd /data/system/
+
+abx2xml notification_policy.xml  notification_policy.readablexml
+xml2abx notification_policy.readablexml notification_policy.xml

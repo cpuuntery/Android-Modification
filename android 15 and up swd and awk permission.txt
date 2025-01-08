@@ -1,0 +1,132 @@
+added permissions
+
+sed -i -E 's/(ca.zgrs.clipper">)(.*)/\1<permission name="android.permission.READ_CLIPBOARD_IN_BACKGROUND" granted="true" flags="0" \/>\2/' /data/misc_de/0/apexdata/com.android.permission/runtime-permissions.xml
+
+chmod 400 /data/misc_de/0/apexdata/com.android.permission/runtime-permissions.xml
+chattr +i /data/misc_de/0/apexdata/com.android.permission/runtime-permissions.xml
+
+
+pkill system_server 
+or reboot and after the reboot
+
+sed -i -E 's/(ca.zgrs.clipper">)(.*)/\1<permission name="android.permission.READ_CLIPBOARD_IN_BACKGROUND" granted="true" flags="0" \/>\2/' /data/misc_de/0/apexdata/com.android.permission/runtime-permissions.xml.new
+
+
+
+chmod 400 /data/misc_de/0/apexdata/com.android.permission/runtime-permissions.xml.new
+chattr +i /data/misc_de/0/apexdata/com.android.permission/runtime-permissions.xml.new
+
+
+
+
+chattr -i /data/misc_de/0/apexdata/com.android.permission/runtime-permissions.xml
+chmod 600 /data/misc_de/0/apexdata/com.android.permission/runtime-permissions.xml
+
+
+pkg="ca.zgrs.clipper"
+permission="android.permission.READ_CLIPBOARD_IN_BACKGROUND"
+sed -i -E "s/(${pkg}\">)(.*)/\1<permission name=\"${permission}\" granted=\"true\" flags=\"0\" \/\>\2/" /data/misc_de/0/apexdata/com.android.permission/runtime-permissions.xml
+
+
+
+
+
+pkg="com.termux"
+permission="android.permission.INTERNET"
+permission_status="revoke"  # Set to "grant" or "revoke"
+
+# Use sed with variables
+if [ "$permission_status" == "grant" ]; then
+    sed -i -E "s/(${pkg}\">)(.*)/\1<permission name=\"${permission}\" granted=\"true\" flags=\"0\" \/\>\2/" /data/misc_de/0/apexdata/com.android.permission/runtime-permissions.xml
+elif [ "$permission_status" == "revoke" ]; then
+    sed -i -E "s/(${pkg}\">)(.*)/\1<permission name=\"${permission}\" granted=\"false\" flags=\"0\" \/\>\2/" /data/misc_de/0/apexdata/com.android.permission/runtime-permissions.xml
+fi
+
+
+
+
+revoke permissions
+
+
+
+cd /data/misc_de/0/apexdata/com.android.permission/
+
+
+awk -v RS="" -v ORS="" '{
+    content = $0
+    pos1 = index(content, "ca.zgrs.clipper")
+    if (pos1) {
+        substr_content = substr(content, pos1 + length("ca.zgrs.clipper"))
+        match(substr_content, /android\.permission\.READ_EXTERNAL_STORAGE"[[:space:]]*granted="true"/)
+        if (RSTART > 0) {
+            pos2 = pos1 + length("ca.zgrs.clipper") + RSTART - 1
+            new_content = substr(content, 1, pos2 - 1) \
+                           "android.permission.READ_EXTERNAL_STORAGE\" granted=\"false\"" \
+                           substr(content, pos2 + length("android.permission.READ_EXTERNAL_STORAGE\" granted=\"true\""))
+            print new_content > "runtime-permissions.xml.new"
+        }
+    }
+}' runtime-permissions.xml
+cp runtime-permissions.xml.new runtime-permissions.xml
+
+
+cd /data/misc_de/0/apexdata/com.android.permission/
+pkg="com.opera.mini.native"
+permission="android.permission.INTERNET"
+permission_status="revoke"  # Set to "grant" or "revoke"
+
+awk -v RS="" -v ORS="" -v pkg="$pkg" -v permission="$permission" -v status="$permission_status" '{
+    content = $0
+    pos1 = index(content, pkg)
+    if (pos1) {
+        substr_content = substr(content, pos1)
+        match_str = (status == "grant") ? "<permission name=\"" permission "\" granted=\"false\"" : "<permission name=\"" permission "\" granted=\"true\""
+        if (match(substr_content, match_str)) {
+            pos2 = RSTART + pos1 - 1
+            new_permission = (status == "grant") ? "<permission name=\"" permission "\" granted=\"true\" flags=\"0\" />" : "<permission name=\"" permission "\" granted=\"false\" flags=\"0\" />"
+            new_content = substr(content, 1, pos2 - 1) new_permission substr(content, pos2 + RLENGTH)
+            print new_content > "runtime-permissions.xml.new"
+        }
+    }
+}' runtime-permissions.xml
+
+cp runtime-permissions.xml.new runtime-permissions.xml
+
+
+
+awk -v RS="" -v ORS="" '{
+    print "Original content: " $0
+    content = $0
+    
+    # Find the first instance of "ca.zgrs.clipper"
+    pos1 = index(content, "ca.zgrs.clipper")
+    if (pos1 > 0) {
+        print "Found ca.zgrs.clipper at position: " pos1
+        pos1_end = pos1 + length("ca.zgrs.clipper")
+        substr_content = substr(content, pos1_end)
+        
+        # Find the first instance of "package" after "ca.zgrs.clipper"
+        pos_package = index(substr_content, "package")
+        if (pos_package > 0) {
+            print "Found package at position: " (pos1_end + pos_package - 1)
+            substr_content = substr(substr_content, 1, pos_package - 1)
+        }
+        
+        # Find the first instance of the target string within the truncated substring
+        match(substr_content, /android\.permission\.READ_EXTERNAL_STORAGE"[[:space:]]*granted="true"/)
+        if (RSTART > 0) {
+            pos2_start = pos1_end + RSTART - 1
+            pos2_end = pos2_start + RLENGTH - 1
+            print "Found android.permission.READ_EXTERNAL_STORAGE\" granted=\"true\" at position: " pos2_start "-" pos2_end
+            new_content = substr(content, 1, pos2_start - 1) \
+                          "android.permission.READ_EXTERNAL_STORAGE\" granted=\"false\"" \
+                          substr(content, pos2_end + 1)
+            print "Modified content: " new_content
+            print new_content > "s.xml"
+        } else {
+            print "Did not find android.permission.READ_EXTERNAL_STORAGE\" granted=\"true\" after ca.zgrs.clipper and before the first package"
+        }
+    } else {
+        print "Did not find ca.zgrs.clipper"
+    }
+}' runtime-permissions.xml
