@@ -1,0 +1,35 @@
+name of the domain with the target api is from here
+https://cs.android.com/android/platform/superproject/main/+/main:system/sepolicy/private/seapp_contexts
+
+
+su -c 'supolicy --live "allow untrusted_app_27 untrusted_app_27 netlink_route_socket bind"'
+
+
+If termux is installed as a system app but not signed with platform key and is assigned the priv_app domain
+
+su -c 'supolicy --live "allow priv_app privapp_data_file file execute_no_trans"'
+
+
+su -c 'supolicy --live "allow system_server untrusted_app_all_devpts chr_file { read write }"'
+
+
+supolicy --live "allow source_context target_context class_of_the_operation { the_operation }"
+
+
+su -c 'supolicy --live "allow scontext tcontext tclass { the_operation }"'
+
+avc: denied { the_operation } for path="maybe_not_improtant" dev="maybe_not_improtant" scontext=u:r:system_server:s0 tcontext=u:object_r:untrusted_app_all_devpts:s0 tclass=chr_file
+
+
+for example
+
+avc: denied { read write } for path="/dev/pts/0" dev="devpts" ino=3 scontext=u:r:system_server:s0 tcontext=u:object_r:untrusted_app_all_devpts:s0:c161,c256,c512,c768 tclass=chr_file permissive=0 app=com.termux
+
+will be 
+
+su -c 'supolicy --live "allow system_server untrusted_app_all_devpts chr_file { read write }"'
+
+# Remove audit log rate limiting and then run command to check
+adb shell "su -c 'auditctl -r 0'"
+# Check denials
+adb logcat -d | grep "avc: denied"

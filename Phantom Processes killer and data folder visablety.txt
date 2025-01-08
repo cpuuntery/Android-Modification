@@ -1,0 +1,8 @@
+disable Phantom Processes killer
+
+adb shell settings put global settings_enable_monitor_phantom_procs false
+
+make /data/data/ visable
+
+setprop persist.zygote.app_data_isolation false
+

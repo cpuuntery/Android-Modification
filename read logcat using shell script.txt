@@ -1,0 +1,54 @@
+# read logcat instantly 
+logcat -e terminal | while IFS= read -r line; do
+    # Check if the line contains "terminal"
+    if [[ "$line" == *"terminal"* ]]; then
+        echo "string matched"
+		pkill logcat
+        break
+    fi
+done
+
+
+# if you need to clear logcat
+logcat -b all -c && logcat -e terminal | while IFS= read -r line; do
+    # Check if the line contains "terminal"
+    if [[ "$line" == *"terminal"* ]]; then
+        echo "string matched"
+		pkill logcat
+        break
+    fi
+done
+
+
+# use you need to use grep
+logcat -e terminal | while IFS= read -r line; do
+    # Check if the line contains "terminal"
+    if echo "$line" | grep -q terminal; then
+        echo "string matched"
+		pkill logcat
+        break
+    fi
+done
+
+
+# read logcat output every 1 secound 
+logcat -e terminal | while IFS= read -t 1 line; do
+    # Check if the line contains "terminal"
+    if [[ "$line" == *"terminal"* ]]; then
+        echo "string matched"
+		pkill logcat
+        break
+    fi
+done
+
+# Check if the line contains "string" or if 30 minutes have passed
+start_time=$(date +%s)
+logcat -e terminal | while IFS= read -r line; do  
+    if [[ "$line" == *"command"* || $(($(date +%s) - start_time)) -ge 1800 ]]; then
+        echo "string matched or 30 minutes passed"
+        pkill command
+        break
+    fi
+done
+
+

@@ -1,0 +1,6 @@
+adb shell setprop sys.app.rotation adb
+
+adb shell setprop set_sys_app_rotation 1
+or
+black borders left and right
+adb shell setprop set_sys_app_rotation 2

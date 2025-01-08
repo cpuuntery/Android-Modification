@@ -1,0 +1,19 @@
+adb shell settings get secure sms_default_application
+
+
+adb shell settings list <secure/system/global>
+
+
+
+# read settings, there are three partitions. Secure, System & Global
+
+settings list secure
+settings list system
+settings list global
+
+
+# to read a specific one
+settings get secure "sleep_timeout"
+
+# to change a setting
+settings put secure "sleep_timeout" "-1"

@@ -1,0 +1,36 @@
+# do not added adb shel at the start of the line
+setprop service.adb.root 1
+setprop init.svc.adb_root 1
+setprop ctl.restart adbd
+
+adb shell
+
+#extra
+setprop ro.secure 0
+setprop ro.debuggable 1
+setprop sys.ro.secure 0
+setprop sys.ro.debuggable 1
+setprop persist.ro.secure 0
+setprop persist.ro.debuggable 1
+setprop persist.sys.ro.debuggable 1
+setprop persist.sys.ro.secure 0
+
+
+setprop persist.adb.root 1
+setprop persist.sys.adb.root 1
+setprop sys.service.adb.root 1
+setprop persist.service.adb.root 1
+setprop persist.sys.service.adb.root 1
+setprop persist.init.svc.adb_root 1
+setprop persist.sys.svc.adb_root 1
+setprop init.svc.adb_root running
+setprop persist.sys.root_access 3
+
+
+
+
+persist.sys.root_access: [3]
+# 3 enable adb root
+setprop persist.sys.root_access 3
+
+

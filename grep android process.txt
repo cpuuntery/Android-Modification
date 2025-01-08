@@ -1,0 +1,11 @@
+ps -e | grep macro
+
+ps -eZ | grep -w macro
+
+top -b -n 1 -H -s 6 -o pid,tid,user,pr,ni,%cpu,s,virt,res,pcy,cmd,name | grep macro
+
+ps -eo pid,rgid,gid,comm,user | grep macro
+
+ps -o pid,rgid,gid,comm,user -p $(ps -e -o pid=) | grep macro
+
+

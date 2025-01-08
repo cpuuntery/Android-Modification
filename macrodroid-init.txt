@@ -1,0 +1,70 @@
+touch /system/etc/init/macrodroid.rc
+chmod 644 /system/etc/init/macrodroid.rc
+
+service macrodroid /system/bin/macrodroid
+    class core
+    user root
+    group root
+    seclabel u:r:su:s0
+	
+
+touch /system/bin/macrodroid
+chmod 755 /system/bin/macrodroid
+chcon u:r:su:s0 /system/bin/macrodroid
+chown root:shell /system/bin/macrodroid
+
+#!/system/bin/sh
+cd /data/data/com.arlosoft.macrodroid/files/bin/
+./macrodroid.sh
+
+touch /data/data/com.arlosoft.macrodroid/files/bin/macrodroid.sh
+chmod 755 /data/data/com.arlosoft.macrodroid/files/bin/macrodroid.sh
+
+cat /data/data/com.arlosoft.macrodroid/files/bin/macrodroid.sh
+
+#!/system/bin/sh
+if pidof "com.android.systemui" > /dev/null && pidof "com.arlosoft.macrodroid" > /dev/null
+then
+    setprop ctl.stop macrodroid
+else
+	am start-foreground-service com.arlosoft.macrodroid/.MacroDroidService
+fi
+
+
+
+
+maybe use this
+
+#!/system/bin/sh
+for i in {1..100}
+do
+if pidof "com.android.systemui" > /dev/null && pidof "com.arlosoft.macrodroid" > /dev/null
+then
+    setprop ctl.stop macrodroid
+else
+	am start-foreground-service com.arlosoft.macrodroid/.MacroDroidService
+fi
+done
+
+
+nohup ./macrodroid.sh &>/dev/null &
+setsid ./macrodroid.sh &>/dev/null &
+
+
+or this
+
+#!/system/bin/sh
+for i in {1..100}
+do
+if pidof "com.android.systemui" > /dev/null && pidof "com.arlosoft.macrodroid" > /dev/null
+then
+    setprop ctl.stop macrodroid
+else
+	am start-foreground-service com.arlosoft.macrodroid/.MacroDroidService
+fi
+sleep 1
+done
+
+
+nohup ./macrodroid.sh &>/dev/null &
+setsid ./macrodroid.sh &>/dev/null &
