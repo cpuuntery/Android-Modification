@@ -1,0 +1,42 @@
+get the Activity name using
+
+dumpsys window displays
+
+or
+
+dumpsys SurfaceFlinger
+
+remove the word Activity at the end
+
+am start -n com.android.settings/com.android.settings.SubSettings -e :settings:show_fragment com.android.settings.applications.RunningServices
+
+works with android 13
+
+am start -n com.android.settings/.Settings\$DevRunningServicesActivity
+
+am start -n com.android.settings/com.android.settings.SubSettings -e :settings:show_fragment com.android.settings.applications.SpecialAccessSettings
+
+
+escape every $ with \ and every last dot . with /
+
+am start -n com.android.settings/.Settings\$AppAndNotificationDashboardActivity
+
+
+from
+com.android.settings/com.android.settings.Settings$AppDashboardActivity
+
+to
+am start -n com.android.settings/.Settings\$AppDashboardActivity
+
+
+from
+com.android.permissioncontroller/com.android.permissioncontroller.role.ui.DefaultAppListActivity
+
+to
+am start -n com.android.permissioncontroller/.role.ui.DefaultAppListActivity
+
+from
+com.android.settings/com.android.settings.SubSettings
+
+to
+am start -n com.android.settings/.SubSettings
