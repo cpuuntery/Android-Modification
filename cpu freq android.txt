@@ -1,0 +1,79 @@
+cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_available_frequencies
+
+for x in /sys/devices/system/cpu/*/cpufreq/; do echo 1700000 > $x/scaling_max_freq; done
+
+
+for x in /sys/devices/system/cpu/*/cpufreq/; do echo 1700000 | tee $x/scaling_max_freq; done
+
+cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
+
+echo 2600000 | tee /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+
+for file in /sys/devices/system/cpu/cpu*/cpufreq/scaling_max_freq; do echo "2400000"
+
+
+for i in /sys/devices/system/cpu/*/cpufreq/; do echo 800000 > /sys/devices/system/cpu/cpu$i/cpufreq/scaling_max_freq; done
+for i in `seq 1 11`; do echo 800000 | tee /sys/devices/system/cpu/cpu$i/cpufreq/scaling_max_freq; done
+
+grep . /sys/devices/system/cpu/cpu*/cpufreq/scaling_max_freq
+grep . /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq
+grep . /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+
+
+echo 700000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_setspeed
+cat /proc/cpuinfo
+cpu MHz  : 697.252 
+echo 900000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_setspeed
+cat /proc/cpuinfo
+cpu MHz  : 976.152 
+
+
+cat /sys/devices/system/cpu/*/cpufreq/cpuinfo_max_freq
+cat /sys/devices/system/cpu/*/cpufreq/cpuinfo_min_freq
+
+
+cpufrequtils
+cpufreq-info
+
+
+
+macrodroid
+
+
+echo "0" > /sys/devices/system/cpu/cpu1/online
+echo "0" > /sys/devices/system/cpu/cpu2/online
+echo "0" > /sys/devices/system/cpu/cpu3/online
+echo "0" > /sys/devices/system/cpu/cpu4/online
+echo "0" > /sys/devices/system/cpu/cpu5/online
+echo "0" > /sys/devices/system/cpu/cpu6/online
+echo "0" > /sys/devices/system/cpu/cpu7/online
+echo "powersave" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+echo "powersave" > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
+echo "powersave" > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
+echo "powersave" > /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
+echo "powersave" > /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
+echo "powersave" > /sys/devices/system/cpu/cpu5/cpufreq/scaling_governor
+echo "powersave" > /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor
+echo "powersave" > /sys/devices/system/cpu/cpu7/cpufreq/scaling_governor
+dumpsys deviceidle force-idle deep
+echo "mem" > /sys/power/state
+
+
+
+
+
+echo "1" > /sys/devices/system/cpu/cpu1/online
+echo "1" > /sys/devices/system/cpu/cpu2/online
+echo "1" > /sys/devices/system/cpu/cpu3/online
+echo "1" > /sys/devices/system/cpu/cpu4/online
+echo "1" > /sys/devices/system/cpu/cpu5/online
+echo "1" > /sys/devices/system/cpu/cpu6/online
+echo "1" > /sys/devices/system/cpu/cpu7/online
+echo "schedplus" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+echo "schedplus" > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
+echo "schedplus" > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
+echo "schedplus" > /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
+echo "schedplus" > /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
+echo "schedplus" > /sys/devices/system/cpu/cpu5/cpufreq/scaling_governor
+echo "schedplus" > /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor
+echo "schedplus" > /sys/devices/system/cpu/cpu7/cpufreq/scaling_governor
