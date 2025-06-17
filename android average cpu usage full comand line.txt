@@ -1,0 +1,107 @@
+#!/bin/sh
+# CONFIGURATION:
+SAMPLE_INTERVAL=1   # Seconds between samples
+DURATION=3          # Number of samples to take
+
+# Get clock ticks per second.
+clk_tck=`getconf CLK_TCK`
+if [ -z "$clk_tck" ] || [ "$clk_tck" -eq 0 ]; then
+    clk_tck=1
+fi
+
+# Get number of CPU cores.
+num_cores=`grep -m 1 'cpu cores' /proc/cpuinfo | awk -F: '{gsub(/^[ \t]+/,"",$2); print $2}'`
+if [ -z "$num_cores" ] || [ "$num_cores" -eq 0 ]; then
+    num_cores=1
+fi
+
+# We simulate associative arrays using per PID variable names.
+# e.g.:
+#   prev_ticks_<pid> holds the initial CPU ticks for PID <pid>.
+#   commands_<pid> holds the recorded full command line.
+#   delta_sum_<pid> holds the accumulated CPU tick difference.
+# "pids" will accumulate all PIDs seen in the initial snapshot.
+pids=""
+
+# Function to gather process data from /proc/[pid]/stat.
+# It prints: PID, short command name, utime, stime.
+read_process_stats() {
+    awk '{print $1, $2, $14, $15}' /proc/[0-9]*/stat 2>/dev/null
+}
+
+# Function to grab the full command line from /proc/<pid>/cmdline.
+get_full_cmdline() {
+    pid="$1"
+    short_cmd="$2"
+    if [ -r "/proc/$pid/cmdline" ]; then
+        full_cmd=`tr '\0' ' ' < "/proc/$pid/cmdline" 2>/dev/null`
+    fi
+    if [ -z "$full_cmd" ]; then
+        echo "$short_cmd"
+    else
+        # Squeeze multiple spaces into a single space and perform a sed replacement.
+        echo "$full_cmd" | sed 's/  */ /g'
+    fi
+}
+
+# --- Initial Snapshot ---
+tmp_init=`mktemp`
+read_process_stats > "$tmp_init"
+while read pid comm utime stime; do
+    ticks=`expr $utime + $stime`
+    eval "prev_ticks_$pid=$ticks"
+    fullcmd=`get_full_cmdline "$pid" "$comm"`
+    eval "commands_$pid='$fullcmd'"
+    eval "delta_sum_$pid=0"
+    pids="$pids $pid"
+done < "$tmp_init"
+rm -f "$tmp_init"
+
+# --- Sampling Loop ---
+i=1
+while [ "$i" -le "$DURATION" ]; do
+    sleep "$SAMPLE_INTERVAL"
+    tmp_sample=`mktemp`
+    read_process_stats > "$tmp_sample"
+    while read pid comm utime stime; do
+        # Only update if the process was seen in our first snapshot.
+        eval "prev=\${prev_ticks_$pid}"
+        if [ -n "$prev" ]; then
+            current_ticks=`expr $utime + $stime`
+            delta=`expr $current_ticks - $prev`
+            eval "old_delta=\${delta_sum_$pid}"
+            new_delta=`expr $old_delta + $delta`
+            eval "delta_sum_$pid=$new_delta"
+            eval "prev_ticks_$pid=$current_ticks"
+        fi
+    done < "$tmp_sample"
+    rm -f "$tmp_sample"
+    i=`expr $i + 1`
+done
+
+# --- Final Calculation and Output ---
+# In the original (single core) calculation, total_ticks was computed as:
+#   clk_tck * DURATION * SAMPLE_INTERVAL
+# For multi core awareness we multiply by the number of cores. This normalizes CPU usage so
+# that 100.00% represents full usage of one core.
+#
+# For each process, the percentage used is calculated as:
+#   (delta_sum * 100) / (clk_tck * DURATION * SAMPLE_INTERVAL * num_cores)
+output_lines=""
+for pid in $pids; do
+    eval "delta=\${delta_sum_$pid}"
+    cpu_percent=`awk -v d="$delta" -v clk="$clk_tck" -v dur="$DURATION" -v si="$SAMPLE_INTERVAL" -v cores="$num_cores" 'BEGIN {
+        tot = clk * dur * si * cores;
+        if (tot == 0) { printf "0.00" } else { printf "%.2f", d*100/tot }
+    }'`
+    eval "cmd=\${commands_$pid}"
+    output_lines="$output_lines
+$pid $cpu_percent $cmd"
+done
+
+# Print header and format the output.
+printf "%-8s %-8s %s\n" "PID" "CPU%" "COMMAND"
+echo "$output_lines" | sort -k2 -nr | awk '{
+    printf "%-8s %-8s %s\n", $1, $2, substr($0, index($0,$3))
+}'
+

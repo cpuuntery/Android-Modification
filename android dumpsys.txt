@@ -1,0 +1,179 @@
+dumpsys activity activities
+dumpsys input
+dumpsys window lastanr
+dumpsys window policy
+dumpsys window animator
+dumpsys window sessions
+dumpsys window displays
+dumpsys window tokens
+dumpsys window windows
+dumpsys activity settings
+dumpsys activity intents
+dumpsys activity broadcasts
+dumpsys activity broadcast-stats
+dumpsys activity providers
+dumpsys activity permissions
+dumpsys activity services
+dumpsys activity recents
+dumpsys activity lastanr
+dumpsys activity starter
+dumpsys activity containers
+dumpsys activity processes
+dumpsys accessibility
+dumpsys display
+dumpsys dreams
+dumpsys media_projection
+dumpsys media_router
+dumpsys media_session
+dumpsys power
+dumpsys print
+dumpsys shortcut -n -u
+dumpsys shortcut -n -f
+dumpsys usb
+dumpsys voiceinteraction
+
+
+
+dumpsys SurfaceFlinger
+dumpsys activity
+dumpsys cpuinfo
+dumpsys notification
+dumpsys window
+dumpsys connectivity
+dumpsys meminfo
+dumpsys DockObserver
+dumpsys GuiExtService
+dumpsys account
+dumpsys alarm
+dumpsys android.os.UpdateEngineService
+dumpsys android.security.keystore
+dumpsys anrmanager
+dumpsys appops
+dumpsys appwidget
+dumpsys audio
+dumpsys autofill
+dumpsys backup
+dumpsys battery
+dumpsys batteryproperties
+dumpsys batterystats
+dumpsys binder_calls_stats
+dumpsys bluetooth_manager
+dumpsys carrier_config
+dumpsys clipboard
+dumpsys commontime_management
+dumpsys companiondevice
+dumpsys connmetrics
+dumpsys consumer_ir
+dumpsys content
+dumpsys contexthub
+dumpsys country_detector
+dumpsys crossprofileapps
+dumpsys dbinfo
+dumpsys device_identifiers
+dumpsys device_policy
+dumpsys deviceidle
+dumpsys devicestoragemonitor
+dumpsys diskstats
+dumpsys drm.drmManager
+dumpsys dropbox
+dumpsys ethernet
+dumpsys fingerprint
+dumpsys gfxinfo
+dumpsys gpu
+dumpsys graphicsstats
+dumpsys hardware_properties
+dumpsys imms
+dumpsys imtksms
+dumpsys input_method
+dumpsys installd
+dumpsys iphonesubinfo
+dumpsys iphonesubinfoEx
+dumpsys ipsec
+dumpsys isms
+dumpsys isub
+dumpsys isubstub
+dumpsys jobscheduler
+dumpsys launcherapps
+dumpsys location
+dumpsys lock_settings
+dumpsys media.VTS
+dumpsys media.audio_flinger
+dumpsys media.audio_policy
+dumpsys media.camera
+dumpsys media.camera.proxy
+dumpsys media.drm
+dumpsys media.extractor
+dumpsys media.metrics
+dumpsys media.mmsdk
+dumpsys media.player
+dumpsys media.resource_manager
+dumpsys media.sound_trigger_hw
+dumpsys media_resource_monitor
+dumpsys midi
+dumpsys mount
+dumpsys mtk_telecom
+dumpsys mtkconnmetrics
+dumpsys mtksimphonebook
+dumpsys netd
+dumpsys netd_listener
+dumpsys netpolicy
+dumpsys netstats
+dumpsys network_management
+dumpsys network_score
+dumpsys network_time_update_service
+dumpsys network_watchlist
+dumpsys oem_lock
+dumpsys otadexopt
+dumpsys overlay
+dumpsys package
+dumpsys package_native
+dumpsys permission
+dumpsys persistent_data_block
+dumpsys phone
+dumpsys phoneEx
+dumpsys pinner
+dumpsys power_hal_mgr_service
+dumpsys processinfo
+dumpsys procstats
+dumpsys recovery
+dumpsys restrictions
+dumpsys scheduling_policy
+dumpsys search
+dumpsys search_engine_service
+dumpsys sec_key_att_app_id_provider
+dumpsys secure_element
+dumpsys sensorservice
+dumpsys serial
+dumpsys servicediscovery
+dumpsys settings
+dumpsys shortcut
+dumpsys simphonebook
+dumpsys sip
+dumpsys slice
+dumpsys soundtrigger
+dumpsys stats
+dumpsys statscompanion
+dumpsys statusbar
+dumpsys storaged
+dumpsys storaged_pri
+dumpsys storagestats
+dumpsys system_update
+dumpsys telecom
+dumpsys telephony.mtkregistry
+dumpsys telephony.registry
+dumpsys textclassification
+dumpsys textservices
+dumpsys thermalservice
+dumpsys trust
+dumpsys uimode
+dumpsys updatelock
+dumpsys usagestats
+dumpsys user
+dumpsys vibrator
+dumpsys vrmanager
+dumpsys wallpaper
+dumpsys webviewupdate
+dumpsys wifi
+dumpsys wificond
+dumpsys wifip2p
+dumpsys wifiscanner
