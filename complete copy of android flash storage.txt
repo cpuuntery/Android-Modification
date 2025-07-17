@@ -1,0 +1,14 @@
+sudo apt install pv
+
+run this command in the path that you want to store a complete copy of android flash storage
+
+adb shell su -c "dd if=/dev/block/mmcblk0" | pv > backup.dd  
+
+OR
+
+adb exec-out dd if=/dev/block/mmcblk0 > emmc-backup.img  
+
+
+
+UFS or EMMC chip (sdc/sda/mmcblk0)
+dd if=/dev/block/bootdevice/mmcblk0 of=/path/to/external-sd/emmc-backup  

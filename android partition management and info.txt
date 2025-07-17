@@ -1,0 +1,50 @@
+this works in linux vm
+parted /dev/sdX   use full disk and not the partition number
+(parted) unit B
+(parted) print free
+(parted) resizepart [partition_number] 
+(parted) [put the end value of the Free Space]
+resize2fs /dev/sdX
+
+or you could use
+parted /dev/sdx print free
+(parted) mkpart # you can use the start and the end from the print free command
+
+
+Deleting a Partition
+parted /dev/sdx
+(parted) print free
+(parted) rm [partition_number]
+
+
+Growing partition if the unallocated space is after the partition
+parted /dev/sdx
+
+(parted) unit B
+(parted) print free
+(parted) resizepart [partition_number]  #use the start and the end from the print free command
+(parted) mkpart # you can use the start and the end from the print free command
+
+
+if the unallocated space is before the partition your only option us to remove the partition then the unallocated space will be merged then create a new partition
+parted /dev/sdx
+
+(parted) unit B
+(parted) print free
+(parted) rm [partition_number]
+(parted) mkpart
+
+or
+you could format the partition to get the extended size 
+# mke2fs -t ext4 /dev/sdX
+
+or
+
+# mkfs.ext4 /dev/sdX
+
+Partition info
+UFS or EMMC chip (sdc/sda/mmcblk0)
+find /sys/class/block/ -name 'mmcblk0p*' | while read d; do source $d/uevent; echo -e "${PARTN}\t${DEVNAME}\t${MAJOR}:${MINOR}\t${PARTNAME}"; done | sort -n
+
+or
+blkid or busybox blkid

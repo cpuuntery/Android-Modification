@@ -1,0 +1,5 @@
+fastboot flash:raw boot ./zImage ./ramdisk
+
+
+you could extract the the original boot image then added your custom kernel repack and flash it using 
+fastboot flash boot boot.img
