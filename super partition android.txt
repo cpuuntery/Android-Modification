@@ -1,0 +1,120 @@
+Nowadays /system is a logical partition inside the super physical partition.
+That's why we need the device-mapper (dm) to mount it.
+Besides that, the underlying filesystem on /system is usually ext4 with shared blocks
+
+#magisk path info
+su mount | grep -i magisk
+su mount | grep dm
+su mount | grep -i "mirror/system"
+
+
+If you install through recovery (either for the first time or as an update) run one or both of the following commands in a terminal emulator or in your recovery's terminal before installing:
+
+echo KEEPVERITY=false>> /cache/.magisk
+echo KEEPFORCEENCRYPT=false>> /cache/.magisk
+
+or
+echo KEEPVERITY=false>> /cache/.magisk
+echo KEEPFORCEENCRYPT=false>> /cache/.magisk
+
+If you can't access /data (TWRP can't decrypt, etc) you can instead use either /data/.magisk or/system/.magisk, but please note that using /system/.magisk isn't systemless
+system partition must be r/w
+
+echo KEEPVERITY=false>> /system/.magisk
+echo KEEPFORCEENCRYPT=false>> /system/.magisk
+
+you mayable to write the config to the ramdisk in the boot image and then repack with magiskboot
+
+magisk setting before install
+use this the the fiest thing to do in twrp shell
+then flash the other eencrypt disabling tools
+last thing to do format data partition
+su mount | grep -i ".magisk/config"
+
+echo KEEPFORCEENCRYPT=false >> the path
+
+flash Magisk xip or from the cmd
+twrp install /tmp/Magisk-v26.1.zip
+format data partition
+
+
+https://litegapps.github.io/download.html
+
+
+
+
+# you can use lpunpack if you just want the content
+the official lpunpack for extraction but it can’t display the group schema
+./lpunpack super.img
+
+
+
+./imjtool.ELF64 super.img extract
+
+All imges have been shrunk to their minimum sizes. In other words, there’s zero space left in the partition of which the image file holds
+
+Enlarge the file to 2G. It can be any size
+fallocate -l 2G system_a.img
+
+e2fsck -E unshare_blocks system_a.img
+
+# Check that the shared_block feature is gone
+dumpe2fs system_a.img
+
+
+we firstly check and fix the errors in the file system (there’ll always be some, probably due to bugs in the previous tools), then shrink the image file back to its minimum size.
+
+e2fsck -yf system_a.img
+
+# Shrink the file system to minimum
+resize2fs -M system_a.img
+
+Before we repack, we need to know the sizes of all images in bytes.
+
+# Get the size of all images
+stat -c '%n %s' *.img
+
+
+
+
+Our last quest is to craft a lengthy lpmake command to build the new super.img. Essentially that translates to three things:
+
+Define the groups
+Define which partition goes into which group
+Assign image files that correspond to each partition
+Most information can be obtained from the previous imjtool. Some of the flags to take note of are:
+
+--metadata-slots: same as imjtool’s output
+--device-size: for most phones, 4GB should be enough (4*1024^3 = 4294967296 bytes). It’s okay to leave some extras
+--group: format of <name>:<size>. The size should be the sum of all sub-partitions under the group
+--partition: format of <name>:<attributes>:<size>[:group], attrs must be ’none’ or ‘readonly’.
+--image: for each partition, specify a corresponding image file
+Once done, you should now have the new super image.
+
+./bin/lpmake --metadata-size 65536\
+ --device-size=4294967296\
+ --metadata-slots=3\
+ --group=google_system_dynamic_partitions_a:2222931968\
+ --partition=odm_a:none:700416:google_system_dynamic_partitions_a\
+ --partition=product_a:none:266579968:google_system_dynamic_partitions_a\
+ --partition=system_a:none:1363767296:google_system_dynamic_partitions_a\
+ --partition=system_ext_a:none:359391232:google_system_dynamic_partitions_a\
+ --partition=vendor_a:none:232493056:google_system_dynamic_partitions_a\
+ --image=odm_a=./odm_a.img\
+ --image=product_a=./product_a.img\
+ --image=system_a=./system_a.img\
+ --image=system_ext_a=./system_ext_a.img\
+ --image=vendor_a=./vendor_a.img\
+ --group=google_system_dynamic_partitions_b:24563712\
+ --partition=odm_b:none:0:google_system_dynamic_partitions_b\
+ --partition=product_b:none:0:google_system_dynamic_partitions_b\
+ --partition=system_b:none:24563712:google_system_dynamic_partitions_b\
+ --partition=system_ext_b:none:0:google_system_dynamic_partitions_b\
+ --partition=vendor_b:none:0:google_system_dynamic_partitions_b\
+ --image=odm_b=./odm_b.img\
+ --image=product_b=./product_b.img\
+ --image=system_b=./system_b.img\
+ --image=system_ext_b=./system_ext_b.img\
+ --image=vendor_b=./vendor_b.img\
+ --sparse \
+ --output ./super.new.img

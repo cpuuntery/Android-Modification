@@ -1,0 +1,164 @@
+##########################################
+if you want to make a disk image from, for example (the first three partition from the disk) you have to delete everything after the last(third in this case) partition that you want in your disk image 
+##########################################
+
+parted /dev/sdx
+
+(parted) unit kib
+(parted) print free
+
+count is end of the last partition plus 1 x 2 
+
+block_count=359424
+
+dd if=/dev/sdc iflag=fullblock of=disk.img count=$(((block_count + 1) * 2)) conv=sync status=progress
+
+
+
+tail -c 16896 /dev/sdc >> disk.img && sgdisk disk.img -e
+
+
+
+
+
+dd if=/dev/sdx iflag=fullblock of=disk.img count=359424 conv=sync status=progress
+
+
+##########################################
+just like when you want the start of the partition and ignore the end you have to delete every partition before your middle starting partition
+##########################################
+
+
+#when you want to image partitions in the middle of the disk
+
+count is end of the last partition plus 1 x 2 
+skip is the start of the partition in the middle of the disk plus 1 *2
+you can aded multiple charactastic to some paramter like this 
+conv=notrunc,sync 
+
+skip=117760
+block_count=359424
+
+dd if=/dev/sdc of=disk.img bs=1 count=16896
+
+dd if=/dev/sdc of=disk.img seek=33 skip=$((skip * 2)) count=$(((block_count + 1) * 2)) conv=notrunc status=progress
+
+sgdisk disk.img -e
+
+
+
+
+
+
+##################################################################################################################
+
+android (free-bsd) based dd command does not support gnu bs=3kB 
+so you need to use 
+bs=3000
+
+##################################################################################################################
+
+
+
+alternive block count and creasting disk image from the start and ignoring the end
+###########################################
+
+this one will have the error
+Warning: File size is not a multiple of 512 bytes! Misbehavior is likely!
+
+parted /dev/sdx
+
+(parted) unit kb
+(parted) print free
+
+count is end of the last partition plus 1
+
+
+block_size="1kB"
+block_count=368050
+
+dd if=/dev/sdc iflag=fullblock of=disk.img bs="$block_size" count=$((block_count + 1)) conv=sync status=progress
+
+
+
+dd if=/dev/sdx iflag=fullblock of=disk.img bs=1kB count=368050 conv=sync status=progress
+
+
+
+
+# fixing the the GPT table in one command line
+tail -c 16896 /dev/sdc >> disk.img && sgdisk disk.img -e
+
+
+
+
+
+
+SECTOR=512
+# Usually: 128 entries × 128 bytes each
+PART_ENTRIES=128
+ENTRY_SIZE=128
+ENTRIES_BYTES=$(( PART_ENTRIES * ENTRY_SIZE ))
+
+
+# Number of bytes to tail: entry array + one header sector
+TAIL_BYTES=$(( ENTRIES_BYTES + SECTOR ))
+
+# Append from the real disk’s end to our image
+tail -c $TAIL_BYTES /dev/sdc >> disk.img
+
+
+# final fix to the GPT table
+sgdisk disk.img -e
+
+
+the reason why you need to delete partition before copying a specific amount of partition is because the GPT header at the start and at the end contain info about the start and end address of each partition
+
+so if you do not remove the partitions that you do not want the result image would seem to have corrupt gpt header because the gpt header would point to partitions that will not exist in your image
+
+and that would make all the tool refuse to mount the disk image and only one tool would be able to just list the partition or try to fix the image
+
+
+
+
+
+##################################################################################################################
+but if you have a disk image with same start and end address of all the partition is the block device you can for example restore the last 5 partitions without writing the whole image to the block device 
+
+skip = the start address of the first of the last 5 partition on the disk image that you want to restore *2
+
+[count] is optional if you want to stop before the end of the disk *2
+
+seek =  the start address of the first of the last 5 partition on the block device *2
+
+
+
+skip=117760
+seek=117760
+
+dd if=disk.img iflag=fullblock of=/dev/sdc seek=$((seek * 2)) skip=$((skip * 2)) conv=sync status=progress
+
+
+##################################################################################################################
+dd block size must be the same as the sector size of the partition in or else you will get problems
+
+you can get info about the sector from these tools
+
+parted /dev/sda unit kib print free
+gdisk -l /dev/sda
+fdisk -l /dev/sda
+sgdisk /dev/sda -p
+
+
+blkid
+
+
+fdisk /dev/sda Enter interactive mode. Inside:
+
+p – print the current partition table.
+
+then
+
+x – expert menu, then p
+
+

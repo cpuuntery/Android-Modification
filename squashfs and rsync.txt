@@ -1,0 +1,27 @@
+mksquashfs / /path_to_save/filesystem.squashfs -comp xz -e /rofs /cdrom /media /proc /sys /mnt /storage /sdcard
+
+or 
+
+mksquashfs /path/to/source /path/to/output.sqfs -comp xz -Xdict-size 100%
+
+
+
+ex
+mksquashfs /data /sdcard/filesystem.squashfs -comp xz -e /rofs /data/media /media /proc /sys /mnt
+
+or may be this one is a bit smaller when compressing alot of files or very larg files
+mksquashfs / filesystem.squashfs -comp xz -Xdict-size 100% -e /rofs /data/media /media /proc /sys /mnt
+
+sudo rsync -av -A -X /media/mint/disk/ /media/mint/c83f4a2e-933b-4e2e-8d80-2f7fff081412/custom-root
+
+or
+
+sudo rsync -avAXH --numeric-ids /media/mint/disk/ /media/mint/c83f4a2e-933b-4e2e-8d80-2f7fff081412/custom-root
+
+you could add another v like this -avvAXH to make rsync very verbose
+
+
+mkdir -p /path/to/mountpoint
+
+sudo mount /filesystem.squashfs /path/to/mountpoint
+

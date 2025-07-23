@@ -1,0 +1,5 @@
+Magisk in pre androd 13
+patch boot.imag
+
+Magisk in android 13 +
+patch init_boot.img 

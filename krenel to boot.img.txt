@@ -16,6 +16,34 @@ You should get a file called image-new.img
 
 OR
 =======================================================================
+
+
+magiskboot --unpack boot.img
+
+Repack boot image
+magiskboot --repack new-boot.img
+
+Extract ramdisk.img
+
+magiskboot cpio ramdisk.cpio extract
+
+or
+
+cpio -idmv < ramdisk.cpio
+
+or
+
+cat ./ramdisk.cpio | cpio -i
+
+repack ramdisk
+find . | cpio -o -H newc > ../ramdisk_new.cpio
+
+then repack if you changed the ramdisk
+
+
+OR
+=======================================================================
+
 The compiled file is located at arch/arm64/boot/, there should be a Image.gz-dtb file.
 
 Enter TWRP → Advanced → Terminal on your phone and use the dd command to extract the original boot.img from the phone.
