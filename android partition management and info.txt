@@ -1,4 +1,6 @@
-this works in linux vm
+if the block device sectors are 512 bytes, it may be better to use kib unit 
+because in that case 1 kib = sectors *2
+
 parted /dev/sdX   use full disk and not the partition number
 (parted) unit B
 (parted) print free
@@ -35,6 +37,24 @@ parted /dev/sdx
 (parted) mkpart
 
 or
+
+parted /dev/mmcblk
+(parted) unit B
+(parted) print free
+(parted) mkpart name fs_type start end
+
+example
+(parted) mkpart system ext4 start end
+(parted) mkpart userdata ext4 start end
+
+or
+
+Partition info
+UFS or EMMC chip (sdc/sda/mmcblk0)
+
+resize2fs /dev/sdX
+
+or
 you could format the partition to get the extended size 
 # mke2fs -t ext4 /dev/sdX
 
@@ -42,9 +62,194 @@ or
 
 # mkfs.ext4 /dev/sdX
 
-Partition info
-UFS or EMMC chip (sdc/sda/mmcblk0)
 find /sys/class/block/ -name 'mmcblk0p*' | while read d; do source $d/uevent; echo -e "${PARTN}\t${DEVNAME}\t${MAJOR}:${MINOR}\t${PARTNAME}"; done | sort -n
 
 or
+parted /dev/mmcblk2 unit kib print free
+
+gdisk -l /dev/mmcblk0
+
+fdisk /dev/block/mmcblk0
+
+fdisk -l /dev/block/sda
+
+
+or
+cat /proc/partitions
+
+or
 blkid or busybox blkid
+
+for mmcblk0
+ls -l /dev/block/by-name | sort -t'/' -k4.9,4.10n
+for sda or sdc
+ls -l /dev/block/by-name | sort -t'/' -k4.4,4.5n
+
+
+or
+
+ls -l /dev/block/by-name | \
+awk '
+{
+  # 1) Grab the final “->” target and split off the device name
+  target = $NF
+  count = split(target, parts, "/")
+  name  = parts[count]
+
+  # 2) Default sort key components
+  prefix = name
+  num    = 0
+
+  # 3) Detect and extract numeric suffixes
+  if (match(name, /^mmcblk[0-9]+p[0-9]+$/)) {
+    prefix = "mmcblk"
+    sub(/^mmcblk[0-9]+p/, "", name)
+    num = name + 0
+  }
+  else if (match(name, /^sd[a-z][0-9]+$/)) {
+    prefix = substr(name,1,3)      # e.g. "sda"
+    sub(/^sd[a-z]/, "", name)
+    num = name + 0
+  }
+  else if (match(name, /^sd[a-z]$/)) {
+    prefix = name                 # raw base device, no number
+    num    = 0
+  }
+
+  # 4) Emit:  prefix + zero-padded number + original line
+  printf "%s %03d %s\n", prefix, num, $0
+}
+' | \
+sort -k1,1 -k2,2n | \
+cut -d' ' -f3-
+
+
+or
+
+
+ls -l /dev/block/by-name | \
+awk '{
+    # Find the target path, which is after " -> "
+    target_path = $NF
+
+    # Extract the device name part (e.g., sda, sda1, mmcblk0p28)
+    split(target_path, path_parts, "/")
+    device_name = path_parts[length(path_parts)]
+
+    # --- Extract the numerical part and pad it ---
+    num = 0 # Default if no number is found or for devices without partition numbers (like sda)
+
+    # For sdaX, sdcX patterns
+    if (device_name ~ /^(sd[a-z])([0-9]+)$/) {
+        num = substr(device_name, length(gensub(/([0-9]+)$/, "", "g", device_name)) + 1)
+    }
+    # For mmcblkXpY patterns
+    else if (device_name ~ /^mmcblk[0-9]+p([0-9]+)$/) {
+        # Extract the number after 'p'
+        sub(/^mmcblk[0-9]+p/, "", device_name)
+        num = device_name
+    }
+    # Handle base devices like sda or sdc (no number)
+    else if (device_name ~ /^(sd[a-z])$/) {
+        num = 0 # Assign a low number for devices without partition numbers
+    }
+
+    # Pad the number with leading zeros to 3 digits
+    # (assuming max partition number is 999)
+    padded_num = sprintf("%03d", num)
+
+    # Print the padded number, a separator, and the original line
+    print padded_num, $0
+}' | sort -k1,1n | cut -d' ' -f2-
+
+
+
+or
+
+
+ls -l /sys/class/block | \
+awk '
+{
+  # 1) Grab the final “->” target and split off the device name
+  target = $NF
+  count = split(target, parts, "/")
+  name  = parts[count]
+
+  # 2) Default sort key components
+  prefix = name
+  num    = 0
+
+  # 3) Detect and extract numeric suffixes
+  if (match(name, /^mmcblk[0-9]+p[0-9]+$/)) {
+    prefix = "mmcblk"
+    sub(/^mmcblk[0-9]+p/, "", name)
+    num = name + 0
+  }
+  else if (match(name, /^sd[a-z][0-9]+$/)) {
+    prefix = substr(name,1,3)      # e.g. "sda"
+    sub(/^sd[a-z]/, "", name)
+    num = name + 0
+  }
+  else if (match(name, /^sd[a-z]$/)) {
+    prefix = name                 # raw base device, no number
+    num    = 0
+  }
+
+  # 4) Emit:  prefix + zero-padded number + original line
+  printf "%s %03d %s\n", prefix, num, $0
+}
+' | \
+sort -k1,1 -k2,2n | \
+cut -d' ' -f3-
+
+
+
+or
+
+
+ls -l /sys/class/block | \
+awk '{
+    # Find the target path, which is after " -> "
+    target_path = $NF
+
+    # Extract the device name part (e.g., sda, sda1, mmcblk0p28)
+    split(target_path, path_parts, "/")
+    device_name = path_parts[length(path_parts)]
+
+    # --- Extract the numerical part and pad it ---
+    num = 0 # Default if no number is found or for devices without partition numbers (like sda)
+
+    # For sdaX, sdcX patterns
+    if (device_name ~ /^(sd[a-z])([0-9]+)$/) {
+        num = substr(device_name, length(gensub(/([0-9]+)$/, "", "g", device_name)) + 1)
+    }
+    # For mmcblkXpY patterns
+    else if (device_name ~ /^mmcblk[0-9]+p([0-9]+)$/) {
+        # Extract the number after 'p'
+        sub(/^mmcblk[0-9]+p/, "", device_name)
+        num = device_name
+    }
+    # Handle base devices like sda or sdc (no number)
+    else if (device_name ~ /^(sd[a-z])$/) {
+        num = 0 # Assign a low number for devices without partition numbers
+    }
+
+    # Pad the number with leading zeros to 3 digits
+    # (assuming max partition number is 999)
+    padded_num = sprintf("%03d", num)
+
+    # Print the padded number, a separator, and the original line
+    print padded_num, $0
+}' | sort -k1,1n | cut -d' ' -f2-
+
+
+
+
+
+
+
+
+
+
+
+
