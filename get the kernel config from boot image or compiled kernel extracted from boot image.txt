@@ -1,0 +1,25 @@
+wget https://github.com/torvalds/linux/raw/master/scripts/extract-ikconfig && chmod a+x extract-ikconfig
+
+you can use extract-ikconfig with boot images with extracting the kernel from the boot image
+but if that did not work, you can try to extract kernel using for example abootimg
+
+sudo apt install android-tools-mkbootimg abootimg
+
+abootimg -x boot.img
+
+wget https://github.com/torvalds/linux/raw/master/scripts/extract-ikconfig && chmod a+x extract-ikconfig
+./extract-ikconfig boot.img-zImage > extracted_defconfig to get defconfig from stock kernel.
+
+
+or
+
+
+wget https://raw.githubusercontent.com/torvalds/linux/master/scripts/extract-ikconfig ;
+chmod +x extract-ikconfig
+
+./extract-ikconfig boot.img > xosp711_Z00L_defconfig
+
+and as i understand it. 
+this is needed when you try to compile the kernel from source
+but when you compile a custom kernel from github it is not needed
+Because the works is already done by the custom kernel developer

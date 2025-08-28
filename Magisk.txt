@@ -3,3 +3,5 @@ patch boot.imag
 
 Magisk in android 13 +
 patch init_boot.img 
+
+Remember, ramdisk is in init_boot now, kernel is in boot.

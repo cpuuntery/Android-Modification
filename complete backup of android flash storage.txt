@@ -16,7 +16,13 @@ adb root
 adb pull /dev/block/mmcblk0
 
 OR
+adb shell "su -c 'dd if/dev/block/mmcblk0 2> /dev/null'" > emmc-backup.img
+
+OR
+get  boot.img from the phone
 adb shell "su -c 'dd if=/dev/block/bootdevice/by-name/boot 2> /dev/null'" > boot.img
+
+write boot.img to the phone
 adb shell "su -c 'dd of=/dev/block/bootdevice/by-name/boot'" < path/to/boot.img
 
 

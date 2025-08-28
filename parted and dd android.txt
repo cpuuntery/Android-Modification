@@ -1,3 +1,25 @@
+reboot into recovery 
+
+adb reboot recovery
+
+copy the static parted bin to recovery temp ramdisk
+
+adb push parted /
+
+or
+
+adb push parted /tmp
+
+adb shell
+chmod 0700 parted
+
+umount /data
+umount /system
+umount /cache
+
+./parted
+
+
 ##########################################
 if you want to make a disk image from, for example (the first three partition from the disk) you have to delete everything after the last(third in this case) partition that you want in your disk image 
 ##########################################
@@ -7,7 +29,7 @@ parted /dev/sdx
 (parted) unit kib
 (parted) print free
 
-count is end of the last partition plus 1 x 2 
+count is the end of the last partition that you want in your image plus 1 x 2 
 
 block_count=359424
 
@@ -123,7 +145,8 @@ and that would make all the tool refuse to mount the disk image and only one too
 
 
 ##################################################################################################################
-but if you have a disk image with same start and end address of all the partition is the block device you can for example restore the last 5 partitions without writing the whole image to the block device 
+but if you have a disk image with same start and end address of all the partition as the block device you can for example restore the last 5 partitions without writing the whole image to the block device 
+you can use this way if the partition is deleted or resized and if you wanted get the same arrangement as the back up disk image
 
 skip = the start address of the first of the last 5 partition on the disk image that you want to restore *2
 
@@ -132,11 +155,48 @@ skip = the start address of the first of the last 5 partition on the disk image 
 seek =  the start address of the first of the last 5 partition on the block device *2
 
 
+this is very dangerous i recommend if partition are resized or removed then you just remove it then create a new partition with the correct size with [mkpart] then write to the new partition block device using dd
+
+
+
+
 
 skip=117760
 seek=117760
 
-dd if=disk.img iflag=fullblock of=/dev/sdc seek=$((seek * 2)) skip=$((skip * 2)) conv=sync status=progress
+dd if=disk.img of=main_gpt_header.img bs=1 count=16896
+
+dd if=disk.img iflag=fullblock of=/dev/sda seek=$((seek * 2)) skip=$((skip * 2)) conv=sync status=progress
+
+dd if=main_gpt_header.img of=/dev/sda bs=1 count=16896
+
+#if you restored to a partition from the middle without writing to start or the end of the disk you need to use this
+tail -c 16896 disk.img >> /dev/sda
+
+example
+
+# block device to get information then write to it
+parted /dev/sda unit kib print free
+# backup disk image to get information then write from it
+parted disk.img unit kib print free
+
+skip=65536
+seek=65536
+
+dd if=disk.img of=main_gpt_header.img bs=1 count=16896
+
+dd if=disk.img iflag=fullblock of=/dev/sda seek=$((seek * 2)) skip=$((skip * 2)) conv=sync status=progress
+
+dd if=main_gpt_header.img of=/dev/sda bs=1 count=16896
+
+
+you do not have to write the main gpt header if the partitions are not resized or deleted and have the same size as the disk image 
+for example when the partition is formatted it will have the same start and end
+
+skip=65536
+seek=65536
+
+dd if=disk.img iflag=fullblock of=/dev/sda seek=$((seek * 2)) skip=$((skip * 2)) conv=sync status=progress
 
 
 ##################################################################################################################
@@ -160,5 +220,100 @@ p – print the current partition table.
 then
 
 x – expert menu, then p
+
+
+
+
+##################################################################################################################
+
+if you delete a partition it will disappear from 
+/dev/block
+and if you create a partition it will appear in
+/dev/block
+
+if are not touching the bootloader or the recovery partitions you can try to reboot to recovery again to see the update to 
+/dev/block
+
+example
+
+parted /dev/mmcblk
+(parted) unit kib
+(parted) print free
+(parted) mkpart name fs_type start end
+
+example
+(parted) mkpart system ext4 start end
+(parted) mkpart userdata ext4 start end
+
+
+the partition numbers from 
+/dev/block
+match 
+parted print free
+
+
+and after seeing the update do not forget to format it as ext4
+
+# mke2fs -t ext4 /dev/block
+
+or
+
+# mkfs.ext4 /dev/block
+
+
+
+######################################################################################################################
+how to create a disk image of the flash storage but excluding the userdata partition
+
+parted /dev/sdx
+
+(parted) unit kib
+(parted) print free
+
+count is the start of user data partition plus 1000 x 2 
+
+block_count=940032
+
+dd if=/dev/sdc iflag=fullblock of=disk.img count=$(((block_count + 1000) * 2)) conv=sync status=progress
+
+use this command to know which partition to delete  
+
+sgdisk disk.img -e
+
+the delete command
+
+sgdisk disk.img -d 5
+
+create new partition from the newly deleted partition
+
+parted disk.img
+
+(parted) unit kib
+(parted) print free
+(parted) mkpart userdata
+
+if you touched or needed to touch the userdata partition then do this, otherwise you do not need to do anything
+in twrp or recovery shell
+resize2fs on the partition number of the userdata partition
+
+
+
+######################################################################################################################
+Backup the gpt header using gdisk
+gdisk -b gpt_header.bin /dev/block/mmcblk0
+or
+using sgdisk
+sgdisk --backup=gpt_header.bin /dev/block/mmcblk0
+restore the gpt header using gdisk
+gdisk -r gpt_header.bin /dev/block/mmcblk0
+or
+using sgdisk
+sgdisk --load-backup=gpt_header.bin  /dev/block/mmcblk0
+
+######################################################################################################################
+
+if you resize any partition try to make have the same and the partition number is the original one
+
+
 
 

@@ -1,0 +1,21 @@
+find the last 100 files that have been written to 
+with unix timestamp 
+./find-rs /sdcard/ -xdev  -type f -printf '%T@ %p\n' | sort -n | tail -n 100
+send error messages (stderr) to /dev/null
+./find-rs /sdcard/ -xdev  -type f -printf '%T@ %p\n' 2>/dev/null | sort -n | tail -n 100
+
+find the last 100 files that have been created
+./find-rs /sdcard/ -xdev  -type f -printf '%C@ %p\n' | sort -n | tail -n 100
+
+find the last 100 files that have been accessed (read from)
+with unix timestamp 
+./find-rs /sdcard/ -xdev  -type f -printf '%A@ %p\n' | sort -n | tail -n 100
+
+
+
+note
+-xdev  Don't descend directories on other filesystems
+
+
+
+

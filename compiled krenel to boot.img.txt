@@ -1,0 +1,139 @@
+#######The boot image must the exact same size as the original one if it is a few bytes bigger or smaller is OK but a megabyte bigger or smaller means you done something wrong
+
+
+Open a terminal in the AIK directory and use the command to unpack stockboot.img (sudo is required)
+
+./unpackimg.sh stockboot.img
+
+Enter the split_img directory and replace the stockboot.img-zImage
+(kernel file) with the compiled Image.gz-dtb 
+(the file name should be changed to stockboot.img-zImage).
+Return to the AIK directory and repack it using this command
+./repackimg.sh
+You should get a file called image-new.img
+
+
+
+OR
+=======================================================================
+
+
+magiskboot --unpack boot.img
+
+Repack boot image
+magiskboot --repack new-boot.img
+
+Extract ramdisk.img
+
+magiskboot cpio ramdisk.cpio extract
+
+or
+
+cpio -idmv < ramdisk.cpio
+
+or
+
+cat ./ramdisk.cpio | cpio -i
+
+repack ramdisk
+find . | cpio -o -H newc > ../ramdisk_new.cpio
+
+then repack if you changed the ramdisk
+
+
+OR
+=======================================================================
+
+The compiled file is located at arch/arm64/boot/, there should be a Image.gz-dtb file.
+
+Enter TWRP → Advanced → Terminal on your phone and use the dd command to extract the original boot.img from the phone.
+
+dd if=/dev/block/bootdevice/by-name/boot of=/sdcard/stockboot.img
+
+Transfer the original stockboot.img file to the computer, put it and Image.gz-dtb we just compiled in the AIK working directory
+
+
+Open the terminal in the AIK directory and use the command to extract 
+
+stockboot.img (sudo is required)
+
+./unpackimg.sh stockboot.img
+Enter the split_img directory 
+replace the kernel file stockboot.img-zImage with the Image.gz-dtb we compiled, and change the file name stockboot.img-zImage
+
+Return to the AIK directory and repackage
+using this command 
+
+./repackimg.sh
+
+You should get a image-new.img
+
+
+
+OR
+=======================================================================
+
+sudo apt install android-tools-mkbootimg abootimg
+
+We have an Android boot image which contains a stock kernel, ramdisk and command-line. We extract all of these using:
+
+abootimg -x boot.img
+
+This results in the following files:
+
+bootimg.cfg: configuration with addresses, sizes and the kernel commandline.
+zImage: the stock kernel
+initrd.img: the stock ramdisk
+We will use the same configuration file and ramdisk.
+
+We do need to make a small change to the configuration though. I found that my compiled kernel image was bigger than the stock kernel. The size of the kernel is set in the configuration file (bootimg.cfg) to the size of the stock kernel, so this needs to change. Since aboot can determine the size itself when it's packing everything up, we can just remove the bootsize from the configuration. Open bootimg.cfg with your favorite editor and remove the line with bootsize =. Alternatively use the following line to do the same:
+
+sed -i '/bootsize =/d' bootimg.cfg
+Now we can create our custom boot image. We name it newboot.img using the following line:
+
+abootimg --create newboot.img -f bootimg.cfg -k linux/arch/arm/boot/zImage-dtb -r initrd.img
+
+
+
+
+OR
+============
+wget https://github.com/xiaolu/mkbootimg_tools/archive/refs/heads/master.zip
+
+use the dd command to extract the original boot.img from the phone.
+
+dd if=/dev/block/bootdevice/by-name/boot of=/sdcard/stockboot.img
+
+mkbootimg_tools/mkboot stockboot.img extraction_directory_name
+
+Copy the compiled kernel into the extracted directory
+
+cp out/arch/arm64/boot/Image.gz-dtb extraction_directory_name/kernel
+
+mkbootimg_tools/mkboot extraction_directory_name boot.newkernel.img
+
+
+
+you can also use 
+Android Image Studio (com.redlee90.imagekitchenforandroid)
+OR
+[LINUX] SuperR's Kitchen 
+
+you need specific to use file names
+
+
+Copy ROM zip into the superr_NAME directory of this tool (NAME = the name of your new project).
+OR
+Copy system.ext4.tar and boot.img into the superr_NAME directory of this tool.
+OR
+Copy system.ext4.win and boot.emmc.win into the superr_NAME directory of this tool.
+OR
+Copy system.img and boot.img into the superr_NAME directory of this tool.
+OR
+Copy official Nexus tgz into the superr_NAME directory of this tool.
+OR
+Copy Samsung firmware zip into the superr_NAME directory of this tool.
+OR
+Copy Moto firmware zip into the superr_NAME directory of this tool.
+OR
+Leave superr_NAME directory empty to extract from rooted device or custom recovery

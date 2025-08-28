@@ -1,3 +1,26 @@
+reboot into recovery 
+
+adb reboot recovery
+
+copy the static parted bin to recovery temp ramdisk
+
+adb push parted /
+
+or
+
+adb push parted /tmp
+
+adb shell
+chmod 0700 parted
+
+umount /data
+umount /system
+umount /cache
+
+./parted
+
+
+
 if the block device sectors are 512 bytes, it may be better to use kib unit 
 because in that case 1 kib = sectors *2
 
@@ -241,8 +264,6 @@ awk '{
     # Print the padded number, a separator, and the original line
     print padded_num, $0
 }' | sort -k1,1n | cut -d' ' -f2-
-
-
 
 
 
