@@ -9,6 +9,9 @@ abootimg -x boot.img
 
 wget https://github.com/torvalds/linux/raw/master/scripts/extract-ikconfig && chmod a+x extract-ikconfig
 ./extract-ikconfig boot.img-zImage > extracted_defconfig to get defconfig from stock kernel.
+and maybe
+./extract-ikconfig boot.img-zImage > .config
+.config  must be in the source diractory
 
 
 or
@@ -22,4 +25,5 @@ chmod +x extract-ikconfig
 and as i understand it. 
 this is needed when you try to compile the kernel from source
 but when you compile a custom kernel from github it is not needed
+
 Because the works is already done by the custom kernel developer
