@@ -299,15 +299,9 @@ resize2fs on the partition number of the userdata partition
 
 
 ######################################################################################################################
-Backup the gpt header using gdisk
-gdisk -b gpt_header.bin /dev/block/mmcblk0
-or
-using sgdisk
+Backup the gpt header using sgdisk
 sgdisk --backup=gpt_header.bin /dev/block/mmcblk0
 restore the gpt header using gdisk
-gdisk -r gpt_header.bin /dev/block/mmcblk0
-or
-using sgdisk
 sgdisk --load-backup=gpt_header.bin  /dev/block/mmcblk0
 
 ######################################################################################################################
