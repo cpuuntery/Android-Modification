@@ -1,0 +1,9 @@
+chmod +x cpio
+sudo cp cpio /opt
+sudo PATH=/opt:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games ./unpackimg.sh
+and
+sudo PATH=/opt:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games ./repackimg.sh
+
+or you could replace systeam bin file
+chmod +x cpio
+sudo cp cpio /bin
