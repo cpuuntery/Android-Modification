@@ -15,6 +15,20 @@ for file in /sys/devices/system/cpu/cpu*/cpufreq/scaling_max_freq; do echo "2400
 for i in /sys/devices/system/cpu/*/cpufreq/; do echo 800000 > /sys/devices/system/cpu/cpu$i/cpufreq/scaling_max_freq; done
 for i in `seq 1 11`; do echo 800000 | tee /sys/devices/system/cpu/cpu$i/cpufreq/scaling_max_freq; done
 
+
+grep . /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+
+cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_available_governors
+
+grep . /sys/devices/system/cpu/cpu[0-9]*/cpufreq/scaling_max_freq
+
+cat /sys/devices/system/cpu/cpu[0-9]*/cpufreq/scaling_max_freq
+
+
+
+
+
+
 grep . /sys/devices/system/cpu/cpu*/cpufreq/scaling_max_freq
 grep . /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq
 grep . /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
@@ -76,4 +90,5 @@ echo "schedplus" > /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
 echo "schedplus" > /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
 echo "schedplus" > /sys/devices/system/cpu/cpu5/cpufreq/scaling_governor
 echo "schedplus" > /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor
+
 echo "schedplus" > /sys/devices/system/cpu/cpu7/cpufreq/scaling_governor
