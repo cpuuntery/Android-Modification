@@ -1,0 +1,6 @@
+adb shell wm size 720x1190
+
+adb shell wm overscan 0,0,0,50
+
+# if you want to reset
+adb shell wm reset

@@ -1,0 +1,2 @@
+HOME=/data/local/tmp
+for adb

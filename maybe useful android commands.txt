@@ -1,0 +1,10 @@
+Factory reset the device
+adb shell am broadcast -a android.intent.action.MASTER_CLEAR
+Get all of the user's text messages
+content query --uri content://sms
+Get all of the user's call log
+content query --uri content://call_log/calls
+Get all of the user's contacts
+content query --uri content://contacts/people
+
+adb shell setprop sys.powerctl shutdown
