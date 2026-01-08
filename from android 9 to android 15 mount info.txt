@@ -1,0 +1,113 @@
+
+android 9
+generic_x86:/ $ mount | grep emulated                                                                                                                                                                               
+/data/media on /mnt/runtime/default/emulated type sdcardfs (rw,nosuid,nodev,noexec,noatime,fsuid=1023,fsgid=1023,gid=1015,multiuser,mask=6,derive_gid,default_normal)
+/data/media on /storage/emulated type sdcardfs (rw,nosuid,nodev,noexec,noatime,fsuid=1023,fsgid=1023,gid=1015,multiuser,mask=6,derive_gid,default_normal)
+/data/media on /mnt/runtime/read/emulated type sdcardfs (rw,nosuid,nodev,noexec,noatime,fsuid=1023,fsgid=1023,gid=9997,multiuser,mask=23,derive_gid,default_normal)
+/data/media on /mnt/runtime/write/emulated type sdcardfs (rw,nosuid,nodev,noexec,noatime,fsuid=1023,fsgid=1023,gid=9997,multiuser,mask=7,derive_gid,default_normal)
+
+
+
+
+android 11
+generic_x86_arm:/ $ mount | grep emulated
+
+                                                                                                                                                                         
+/dev/fuse on /storage/emulated type fuse (rw,lazytime,nosuid,nodev,noexec,noatime,user_id=0,group_id=0,allow_other)
+/dev/fuse on /mnt/installer/0/emulated type fuse (rw,lazytime,nosuid,nodev,noexec,noatime,user_id=0,group_id=0,allow_other)
+/dev/fuse on /mnt/androidwritable/0/emulated type fuse (rw,lazytime,nosuid,nodev,noexec,noatime,user_id=0,group_id=0,allow_other)
+/dev/fuse on /mnt/user/0/emulated type fuse (rw,lazytime,nosuid,nodev,noexec,noatime,user_id=0,group_id=0,allow_other)
+/dev/block/vdc on /mnt/pass_through/0/emulated type ext4 (rw,seclabel,nosuid,nodev,noatime,resgid=1065,errors=panic)
+/dev/block/vdc on /mnt/androidwritable/0/emulated/0/Android/data type ext4 (rw,seclabel,nosuid,nodev,noatime,resgid=1065,errors=panic)
+/dev/block/vdc on /mnt/installer/0/emulated/0/Android/data type ext4 (rw,seclabel,nosuid,nodev,noatime,resgid=1065,errors=panic)
+/dev/block/vdc on /storage/emulated/0/Android/data type ext4 (rw,seclabel,nosuid,nodev,noatime,resgid=1065,errors=panic)
+/dev/block/vdc on /mnt/user/0/emulated/0/Android/data type ext4 (rw,seclabel,nosuid,nodev,noatime,resgid=1065,errors=panic)
+/dev/block/vdc on /mnt/androidwritable/0/emulated/0/Android/obb type ext4 (rw,seclabel,nosuid,nodev,noatime,resgid=1065,errors=panic)
+/dev/block/vdc on /mnt/installer/0/emulated/0/Android/obb type ext4 (rw,seclabel,nosuid,nodev,noatime,resgid=1065,errors=panic)
+/dev/block/vdc on /storage/emulated/0/Android/obb type ext4 (rw,seclabel,nosuid,nodev,noatime,resgid=1065,errors=panic)
+/dev/block/vdc on /mnt/user/0/emulated/0/Android/obb type ext4 (rw,seclabel,nosuid,nodev,noatime,resgid=1065,errors=panic)
+
+
+
+android 15
+
+/dev/fuse on /mnt/installer/0/emulated type fuse (rw,lazytime,nosuid,nodev,noexec,noatime,user_id=0,group_id=0,allow_other)
+/dev/fuse on /mnt/androidwritable/0/emulated type fuse (rw,lazytime,nosuid,nodev,noexec,noatime,user_id=0,group_id=0,allow_other)
+/dev/fuse on /mnt/user/0/emulated type fuse (rw,lazytime,nosuid,nodev,noexec,noatime,user_id=0,group_id=0,allow_other)
+/dev/fuse on /storage/emulated type fuse (rw,lazytime,nosuid,nodev,noexec,noatime,user_id=0,group_id=0,allow_other)
+/dev/block/dm-33 on /mnt/pass_through/0/emulated type ext4 (rw,seclabel,nosuid,nodev,noatime,resgid=1065,errors=panic)
+/dev/block/dm-33 on /mnt/androidwritable/0/emulated/0/Android/data type ext4 (rw,seclabel,nosuid,nodev,noatime,resgid=1065,errors=panic)
+/dev/block/dm-33 on /mnt/installer/0/emulated/0/Android/data type ext4 (rw,seclabel,nosuid,nodev,noatime,resgid=1065,errors=panic)
+/dev/block/dm-33 on /mnt/user/0/emulated/0/Android/data type ext4 (rw,seclabel,nosuid,nodev,noatime,resgid=1065,errors=panic)
+/dev/block/dm-33 on /storage/emulated/0/Android/data type ext4 (rw,seclabel,nosuid,nodev,noatime,resgid=1065,errors=panic)
+/dev/block/dm-33 on /mnt/androidwritable/0/emulated/0/Android/obb type ext4 (rw,seclabel,nosuid,nodev,noatime,resgid=1065,errors=panic)
+/dev/block/dm-33 on /mnt/installer/0/emulated/0/Android/obb type ext4 (rw,seclabel,nosuid,nodev,noatime,resgid=1065,errors=panic)
+/dev/block/dm-33 on /mnt/user/0/emulated/0/Android/obb type ext4 (rw,seclabel,nosuid,nodev,noatime,resgid=1065,errors=panic)
+/dev/block/dm-33 on /storage/emulated/0/Android/obb type ext4 (rw,seclabel,nosuid,nodev,noatime,resgid=1065,errors=panic)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ansroid 10 
+mint@mint:~/Documents$ adb shell
+generic_x86_64:/ $ mount | grep emulated                                                                                                                                                                            
+/data/media on /mnt/runtime/default/emulated type sdcardfs (rw,nosuid,nodev,noexec,noatime,fsuid=1023,fsgid=1023,gid=1015,multiuser,mask=6,derive_gid,default_normal)
+/data/media on /storage/emulated type sdcardfs (rw,nosuid,nodev,noexec,noatime,fsuid=1023,fsgid=1023,gid=1015,multiuser,mask=6,derive_gid,default_normal)
+/data/media on /mnt/runtime/read/emulated type sdcardfs (rw,nosuid,nodev,noexec,noatime,fsuid=1023,fsgid=1023,gid=9997,multiuser,mask=23,derive_gid,default_normal)
+/data/media on /mnt/runtime/write/emulated type sdcardfs (rw,nosuid,nodev,noexec,noatime,fsuid=1023,fsgid=1023,gid=9997,multiuser,mask=7,derive_gid,default_normal)
+/data/media on /mnt/runtime/full/emulated type sdcardfs (rw,nosuid,nodev,noexec,noatime,fsuid=1023,fsgid=1023,gid=9997,multiuser,mask=7,derive_gid,default_normal)
+
+
+
+
+
+
+
+
+
+android 15
+mu64xa:/ $ cd /sdcard/                                                                                                                 
+emu64xa:/sdcard $ ls -la
+total 104
+drwxrws--- 2 u0_a202  media_rw 4096 2024-11-22 13:46 Alarms
+drwxrws--x 5 media_rw media_rw 4096 2024-11-22 13:46 Android
+drwxrws--- 2 u0_a202  media_rw 4096 2024-11-22 13:46 Audiobooks
+drwxrws--- 2 u0_a202  media_rw 4096 2024-11-22 13:46 DCIM
+drwxrws--- 2 u0_a202  media_rw 4096 2024-11-22 13:46 Documents
+drwxrws--- 2 u0_a202  media_rw 4096 2024-11-22 13:46 Download
+drwxrws--- 3 u0_a202  media_rw 4096 2024-11-22 13:46 Movies
+drwxrws--- 3 u0_a202  media_rw 4096 2024-11-22 13:46 Music
+drwxrws--- 2 u0_a202  media_rw 4096 2024-11-22 13:46 Notifications
+drwxrws--- 4 u0_a202  media_rw 4096 2024-11-25 12:57 Pictures
+drwxrws--- 2 u0_a202  media_rw 4096 2024-11-22 13:46 Podcasts
+drwxrws--- 2 u0_a202  media_rw 4096 2024-11-22 13:46 Recordings
+drwxrws--- 2 u0_a202  media_rw 4096 2024-11-22 13:46 Ringtones
+emu64xa:/sdcard $ 
+
+android 9
+generic_x86:/ $ cd /sdcard/                                                                                                             
+generic_x86:/sdcard $ ls -la
+total 48
+drwxrwx--x 12 root sdcard_rw 4096 2018-08-20 20:27 .
+drwx--x--x  4 root sdcard_rw 4096 2018-08-20 20:27 ..
+drwxrwx--x  2 root sdcard_rw 4096 2018-08-20 20:27 Alarms
+drwxrwx--x  3 root sdcard_rw 4096 2018-08-20 20:27 Android
+drwxrwx--x  2 root sdcard_rw 4096 2018-08-20 20:27 DCIM
+drwxrwx--x  2 root sdcard_rw 4096 2018-08-20 20:27 Download
+drwxrwx--x  2 root sdcard_rw 4096 2018-08-20 20:27 Movies
+drwxrwx--x  2 root sdcard_rw 4096 2018-08-20 20:27 Music
+drwxrwx--x  2 root sdcard_rw 4096 2018-08-20 20:27 Notifications
+drwxrwx--x  3 root sdcard_rw 4096 2018-08-20 20:27 Pictures
+drwxrwx--x  2 root sdcard_rw 4096 2018-08-20 20:27 Podcasts
+drwxrwx--x  2 root sdcard_rw 4096 2018-08-20 20:27 Ringtones
+
